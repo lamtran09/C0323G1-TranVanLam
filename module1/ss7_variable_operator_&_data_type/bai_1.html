@@ -50,8 +50,8 @@
         <tr align="center">
             <td style=""><select style="height: 50px; width: 60%;font-family: 'Alkatra', cursive;" id="service">
                 <option value="30">Outstanding: 30%</option>
-                <option  value="20">Good: 20%</option>
-                <option  value="15">It was OK: 15%</option>
+                <option value="20">Good: 20%</option>
+                <option value="15">It was OK: 15%</option>
                 <option value="10">BAD: 10%</option>
                 <option value="5">Terrible: 5%</option>
             </select></td>
@@ -94,24 +94,24 @@
         let people = +document.getElementById("people").value;
         let service = +document.getElementById("service").value;
         let tip = ((bill * service) / 100) / people;
-    //     switch (service) {
-    //         case 30:
-    //             document.getElementById("print").innerText = tip + " USD";
-    //             break;
-    //         case 20:
-    //             document.getElementById("print").innerText = tip + " USD";
-    //             break;
-    //         case 15:
-    //             document.getElementById("print").innerText = tip + " USD";
-    //             break;
-    //         case 10:
-    //             document.getElementById("print").innerText = tip + " USD";
-    //             break;
-    //         case 5:
-    //             document.getElementById("print").innerText = tip + " USD";
-    //             break;
-    //     }
-    // }
+        //     switch (service) {
+        //         case 30:
+        //             document.getElementById("print").innerText = tip + " USD";
+        //             break;
+        //         case 20:
+        //             document.getElementById("print").innerText = tip + " USD";
+        //             break;
+        //         case 15:
+        //             document.getElementById("print").innerText = tip + " USD";
+        //             break;
+        //         case 10:
+        //             document.getElementById("print").innerText = tip + " USD";
+        //             break;
+        //         case 5:
+        //             document.getElementById("print").innerText = tip + " USD";
+        //             break;
+        //     }
+        // }
         if (service === 30) {
             document.getElementById("print").innerText = tip + " USD";
         } else if (service === 20) {
