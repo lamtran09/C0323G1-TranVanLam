@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkString(str) {
+        let array = str.split(" ");
+        let newArray = [];
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] != "") {
+                newArray.push(array[i]);
+            }
+        }
+        alert(newArray);
+        let result = [];
+        if (newArray.length == 1) {
+            return ("Chuỗi chỉ có 1 từ và không cần viết tắt");
+        } else for (let i = 0; i < newArray.length; i++) {
+            result[i] = newArray[i].substring(0, 1).toUpperCase();
+        }
+        alert(result)
+        let resultString = "";
+        for (let i = 0; i < result.length; i++) {
+            resultString += result[i];
+        }
+        return (resultString);
+    }
+    alert(checkString(prompt("Nhập chuỗi cần chuyển")))
+
+
+</script>
+</body>
+</html>

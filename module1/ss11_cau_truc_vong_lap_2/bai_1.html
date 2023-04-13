@@ -7,11 +7,12 @@
 <body>
 <script>
     let n = +prompt("Nhập số lượng của mảng");
-    let arr=[];
+    let arr = [];
     for (let i = 0; i < n; i++) {
-        arr[i]= prompt("Nhập phần tử a ["+i+"]");
+        arr[i] = prompt("Nhập phần tử a [" + i + "]");
     }
-    alert("số thứ 2 trong mảng là " + arr[1])
+    alert(arr.sort((a, b) => b- a));
+    alert(arr[1]);
 </script>
 </body>
 </html>

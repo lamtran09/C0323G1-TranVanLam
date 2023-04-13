@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dãy fibonaci</title>
+</head>
+<body>
+<script>
+    let n = prompt("Nhập độ dài của mảng");
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr[i] = prompt("Nhập phần tử của mảng");
+    }
+    alert(arr);
+    function dayFibonaci(arr1) {
+        let num = 0;
+        let num1 = 1;
+        let num2 = 0;
+        let arr1 = [];
+        for (let i = 1; i < 50; i++) {
+            arr1.push(num);
+            num = num1 + num2;
+            num1 = num2;
+            num2 = num;
+        }
+    }
+    dayFibonaci();
+</script>
+</body>
+</html>
