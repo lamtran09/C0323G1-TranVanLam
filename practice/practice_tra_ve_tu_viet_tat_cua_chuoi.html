@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function traVeTuVietTatCuaChuoi(chuoi) {
+        let mang = chuoi.split(" ");
+        let mangMoi = [];
+        for (let i = 0; i < mang.length; i++) {
+            if (mang !== "") {
+                mangMoi.push(mang[i]);
+            }
+        }
+        let mangMoi2 = [];
+        if (mangMoi.length === 1) {
+            return  mangMoi;
+        } else for (let i = 0; i < mangMoi.length; i++) {
+            mangMoi2[i] = mangMoi[i].substring(0, 1).toUpperCase();
+        }
+        console.log(mangMoi2);
+        let mangMoi3 = [];
+        mangMoi3.push(mangMoi2.join(''));
+        return mangMoi3;
+    }
+    alert(traVeTuVietTatCuaChuoi(prompt("Nhập vào đây đi ")));
+</script>
+</body>
+</html>

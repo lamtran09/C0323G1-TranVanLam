@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let flag = true;
+    do {
+        let n = prompt("Nhập độ dài của mảng");
+        let array = [];
+        for (let i = 0; i < n; i++) {
+            array[i] = prompt("Nhập phần tử thứ " + i + " trong mảng");
+        }
+        alert(array);
+        let newArray = [];
+        for (let j = 0; j < n; j++) {
+            newArray.push(array[j]);
+            if (array[j] == newArray) {
+                flag = false;
+                for (let j = 0; j < n; j++) {
+                    array[j] = prompt("Nhập phần tử thứ " + j + " trong mảng");
+                }
+            } else {
+                flag = true;
+                break;
+            }
+            console.log(newArray);
+        }
+    } while (flag !== true)
+</script>
+</body>
+</html>

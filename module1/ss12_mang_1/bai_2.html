@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dãy fibonaci</title>
+    <title>Title</title>
 </head>
 <body>
 <script>
@@ -12,7 +12,12 @@
         array[i] = +prompt("Nhập phần tử thứ " + i + " của mảng");
     }
     alert(array);
-
+    let perfectSquare = [];
+    for (let j = 0; j < array.length; j++) {
+        if (Math.sqrt(array[j]) % 1 === 0) {
+            perfectSquare.push(array[j]);
+        }
+    }alert(perfectSquare)
 </script>
 </body>
 </html>

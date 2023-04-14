@@ -6,7 +6,31 @@
 </head>
 <body>
 <script>
-
+    let n = +prompt("Nhập vào độ dài của mảng ");
+    let arr = [];
+    let number1 = 1;
+    let number2 = 0;
+    let nextNumber = 0;
+    let arrFionaci = [];
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("Nhập vào phần tử thứ " + i + " của mảng");
+    }
+    alert("Các phần tử của mảng vừa nhập vào " + arr);
+    let max = arr[0];
+    for (let i = 0; i <arr.length ; i++) {
+            if (arr[i]>max){
+                arr[i]=max;
+            }
+    }
+    let a1 =0;
+    while(max<=a1);{
+    for (let i = 0; i < max; i++) {
+        arrFionaci.push(nextNumber);
+        nextNumber = number1 + number2;
+        number1 = number2;
+        number2 = nextNumber;
+    }
+    }alert("Dãy fibonaci "+ arrFionaci)
 </script>
 </body>
 </html>
