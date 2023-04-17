@@ -5,6 +5,26 @@
     <title>Title</title>
 </head>
 <body>
-
+<script>
+    let n = +prompt("Nhập vào số lượng mảng");
+    let tatolDiagonal = 0;
+    numberArray = [];
+    for (let i = 0; i < n; i++) {
+        let arrayLength = [];
+        let m = +prompt("Nhập độ dài của mảng");
+        for (let j = 0; j < m; j++) {
+            arrayLength[j] = +prompt("Nhập phần tử thứ " + j + " trong mảng " + i);
+        }
+        numberArray.push(arrayLength);
+    }
+    console.log(numberArray)
+    for (let i = 0; i < numberArray.length; i++) {
+        for (let j = 0; j < numberArray.length; j++) {
+            if (i === j) {
+                tatolDiagonal += numberArray[i][j];
+            }
+        }
+    }alert(tatolDiagonal)
+</script>
 </body>
 </html>
