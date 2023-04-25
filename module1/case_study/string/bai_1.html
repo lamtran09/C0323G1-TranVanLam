@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function chuanHoaKyTu(str) {
+        let arr = str.toLocaleLowerCase();
+        let newArr = arr.split(" ");
+        let newArr1 = [];
+        for (let i = 0; i < newArr.length; i++) {
+            if (newArr[i] !== "") {
+                newArr1.push(newArr[i]);
+            }
+        }
+        alert(newArr1);
+        let newArr2 = [];
+        let max = 0;
+        for (let i = 0; i < newArr1.length; i++) {
+            let a = newArr1[i].charAt(0).toUpperCase() + newArr1[i].slice(1);
+            newArr2.push(a);
+            if (max < newArr2[i].length) {
+                max = newArr2[i];
+            }
+        }
+        alert(newArr2.join(" "));
+        alert(max);
+    }
+
+    let n = prompt("Nhập chuỗi ký tự cần chuẩn Hóa")
+    chuanHoaKyTu(n);
+</script>
+</body>
+</html>

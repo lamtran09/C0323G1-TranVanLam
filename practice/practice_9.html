@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var array = ["cafe", "cam vắt", "nước ép cà rốt", "nước ép cà chua", "nước lọc", "nước dừa", "thanh toán"];
+    var arratTien = [17000, 20000, 15000, 10000, 13000, 23000]
+    let sout;
+    let tongTien = 0;
+    sout = "<table border='1'>"
+    for (let i = 0; i < array.length; i++) {
+        sout = sout + "<td>" + array[i] + "</td>";
+    }
+    document.write(sout)
+
+    do {
+        var n = prompt("nhập n:");
+        for (let i = 0; i < array.length; i++) {
+            for (let j=0; j<arratTien.length;j++){
+                if (i==j){
+                    if(n==j){
+                        tongTien+=arratTien[j];
+                    }
+                }
+            }
+        }
+    } while (n!=7);
+    console.log(tongTien)
+
+</script>
+</body>
+</html>

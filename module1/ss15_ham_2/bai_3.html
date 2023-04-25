@@ -6,27 +6,21 @@
 </head>
 <body>
 <script>
-    let n = prompt('Nhập vào số co 4 chữ so');
+    let n = prompt('Nhập vào số có 4 chữ số');
     let arr = [];
     function findMaxNumber(n){
         if (n.length !== 4) {
-            alert("-1");
+           alert('-1') ;
         } else {
             arr = n.split("");
-            let count = 0;
             for (let i = 0; i < arr.length - 1; i++) {
                 if (arr[i] < arr[i + 1]) {
                     arr.splice(i, 1);
                     break;
-                } else {
-                    count++;
                 }
             }
-            if (count === 3) {
-                arr.pop();
-            }
         }
-        alert(arr.join(""));
+       alert(arr.join(""));
     }
     findMaxNumber(n);
 </script>

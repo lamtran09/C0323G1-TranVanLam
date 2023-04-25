@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = prompt("Nhập mang ");
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+       arr[i] = parseInt(prompt("Nhập phần tử thứ "+i));
+    }alert(arr);
+    let prefixSum = [];
+    for (let i = 0; i < arr.length; i++) {
+        prefixSum[0] = arr[0];
+        prefixSum[i] = prefixSum[i-1] + arr[i];
+    }alert(prefixSum);
+</script>
+</body>
+</html>

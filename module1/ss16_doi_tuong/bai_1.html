@@ -55,10 +55,8 @@
     let user3 = new accountACB('003', 'Acount3', 10000);
     let listUser = [];
     listUser.push(user1, user2, user3);
-    console.log(listUser);
-
     function displayListUser(listUser) {
-        arr.sort(function (c1,c2){
+        listUser.sort(function (c1,c2){
             return c1.moneyAccount - c2.moneyAccount;
         })
         let table = "<table border='1'>";
