@@ -21,26 +21,26 @@
 <p id="print1" style="color: #e82121"></p>
 <script>
   function thueThuNhapCaNhan(){
-         let luong = document.getElementById("luong").value;
+      let luong = document.getElementById("luong").value;
       let thue;
       let luongRong;
       if(luong>15000000){
           thue = luong*20/100;
           luongRong = luong-thue;
-          document.getElementById("print").innerHTML = thue + "VND đây là tiền bạn phải nop thue"
-          document.getElementById("print1").innerHTML = luongRong+ "VND đây là tiền bạn nhận, bạn thật là chăm chỉ"
+          document.getElementById("print").innerHTML = thue + "VND đây là tiền bạn phải nop thue";
+          document.getElementById("print1").innerHTML = luongRong+ "VND đây là tiền bạn nhận, bạn thật là chăm chỉ";
       }else if(luong>7000000){
           thue = luong*10/100;
           luongRong = luong-thue;
-          document.getElementById("print").innerHTML = thue + "VND đây là tiền bạn phải nop thue"
-          document.getElementById("print1").innerHTML = luongRong+ "VND đây là tiền bạn nhận, bạn gioi qua"
+          document.getElementById("print").innerHTML = thue + "VND đây là tiền bạn phải nop thue";
+          document.getElementById("print1").innerHTML = luongRong+ "VND đây là tiền bạn nhận, bạn gioi qua";
       }else if (luong>0) {
           thue = luong*5/100;
           luongRong = luong-thue;
-          document.getElementById("print").innerHTML = thue + "VND đây là tiền bạn phải nop thue"
-          document.getElementById("print1").innerHTML = luongRong+ "VND đây là tiền bạn nhận, co len ban nhe"
+          document.getElementById("print").innerHTML = thue + "VND đây là tiền bạn phải nop thue";
+          document.getElementById("print1").innerHTML = luongRong+ "VND đây là tiền bạn nhận, co len ban nhe";
       }else {
-          document.getElementById("print").innerText= "Moi ban nhap lai"
+          document.getElementById("print").innerText= "Moi ban nhap lai";
       }
   }
 </script>

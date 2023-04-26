@@ -17,20 +17,27 @@
         }
         alert(newArr1);
         let newArr2 = [];
-        let max = '';
         for (let i = 0; i < newArr1.length; i++) {
             let a = newArr1[i].charAt(0).toUpperCase() + newArr1[i].slice(1);
             newArr2.push(a);
-            if (max.length < newArr2[i].length) {
-                max = newArr2[i];
-            }
         }
-        alert(newArr2.join(" "));
-        alert(max);
+        return newArr2.join(" ");
     }
 
-    let n = prompt("Nhập chuỗi ký tự cần chuẩn Hóa")
-    chuanHoaKyTu(n);
+    function findMax(str) {
+        let arr = str.split(" ");
+        let max = '';
+        for (let i = 0; i < arr.length; i++) {
+            if (max.length < arr[i].length) {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+
+    let n = prompt("Nhập chuỗi ký tự cần chuẩn Hóa");
+    alert(chuanHoaKyTu(n));
+    alert(findMax(n));
 </script>
 </body>
 </html>
