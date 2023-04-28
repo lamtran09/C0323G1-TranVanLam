@@ -84,7 +84,7 @@
         studentsList.sort(function (c1, c2) {
             return c1.id - c2.id
         })
-        let tableString = '<table border="1" style="border-collapse: collapse">\n' +
+        let tableString = '<table border="1" style="border-collapse: collapse" cellspacing="0">\n' +
             '    <tr>\n' +
             '        <th>#</th>\n' +
             '        <th>Id</th>\n' +
@@ -97,11 +97,11 @@
         for (let i = 0; i < list.length; i++) {
             tableString += '    <tr>\n' +
                 '        <td>' + (i + 1) + '</td>\n' +
-                '        <td>'+'HV-' + list[i].id + '</td>\n' +
+                '        <td>' + 'HV-' + list[i].id + '</td>\n' +
                 '        <td>' + list[i].name + '</td>\n' +
                 '        <td>' + list[i].classs + '</td>\n' +
                 '        <td>' + list[i].email + '</td>\n' +
-                '        <td>' + list[i].date+ '</td>\n' +
+                '        <td>' + list[i].date + '</td>\n' +
                 '        <td align="center">' + list[i].module + '</td>\n' +
                 '    </tr>';
         }
@@ -116,8 +116,8 @@
         let module;
 
         do {
-                id= prompt("Nhập ID của Học Viên");
-            }while (!(id.length===4)||isNaN(id));
+            id = prompt("Nhập ID của Học Viên");
+        } while (!(id.length === 4) || isNaN(id));
         do {
             name = prompt("Nhập tên của Học Viên (Tên dài 0 quá 50 ký tự)");
         } while (name.length <= 0 || name.length > 50);
@@ -125,7 +125,7 @@
             classs = prompt("Nhập lớp của Học Viên");
         } while (name.length <= 0);
         let email = prompt("Nhập email của Học Viên");
-        let date= prompt("Nhập ngày sinh của Học Viên");
+        let date = prompt("Nhập ngày sinh của Học Viên");
         do {
             module = +prompt("Nhập module của Học Viên(1-6)");
         } while (!(module === 1 || module === 2 || module === 3 || module === 4 || module === 5 || module === 6));
@@ -157,36 +157,42 @@
     }
 
     function editStudents() {
-        let enterId = prompt("Nhập id bạn muốn chỉnh sửa");
+        let enterId = prompt("Nhập ID bạn muốn chỉnh sửa");
+        let flag = false;
+        let index = 0;
         for (let i = 0; i < studentsList.length; i++) {
             if (enterId === studentsList[i].id) {
-                let id;
-                let name;
-                let module;
-                do {
-                    id= prompt("Sửa ID của Học Viên");
-                }while (!(id.length===4)||isNaN(id));
-                do {
-                    name = prompt("Nhập tên của Học Viên (Tên dài 0 quá 50 ký tự)");
-                } while (name.length <= 0 || name.length > 50);
-                let classs = prompt("Nhập lớp của Học Viên");
-                let email = prompt("Nhập email của Học Viên");
-                let date = prompt("Nhập ngày sinh của Học Viên");
-                do {
-                    module = +prompt("Nhập module của Học Viên(1-6)");
-                } while (!(module === 1 || module === 2 || module === 3 || module === 4 || module === 5 || module === 6));
-
-                studentsList[i].setId(id);
-                studentsList[i].setName(name);
-                studentsList[i].setClasss(classs);
-                studentsList[i].setEmail(email);
-                studentsList[i].setDate(date);
-                studentsList[i].setModule(module);
-                break;
-            } else {
-                alert("Mã học viên không tồn tại");
+                flag = true;
+                index = i;
                 break;
             }
+        }
+        if (flag) {
+            let id;
+            let name;
+            let module;
+            do {
+                id = prompt("Sửa ID của Học Viên");
+            } while (!(id.length === 4) || isNaN(id));
+            do {
+                name = prompt("Nhập tên của Học Viên (Tên dài 0 quá 50 ký tự)");
+            } while (name.length <= 0 || name.length > 50);
+            let classs = prompt("Nhập lớp của Học Viên");
+            let email = prompt("Nhập email của Học Viên");
+            let date = prompt("Nhập ngày sinh của Học Viên");
+            do {
+                module = +prompt("Nhập module của Học Viên(1-6)");
+            } while (!(module === 1 || module === 2 || module === 3 || module === 4 || module === 5 || module === 6));
+            studentsList[index].setId(id);
+            studentsList[index].setName(name);
+            studentsList[index].setClasss(classs);
+            studentsList[index].setEmail(email);
+            studentsList[index].setDate(date);
+            studentsList[index].setModule(module);
+
+
+        } else {
+            alert("Mã học viên không tồn tại");
         }
         display(studentsList);
     }
