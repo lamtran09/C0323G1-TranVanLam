@@ -2,7 +2,7 @@ package ss1_introduction_to_java.bai_tap;
 
 import java.util.Scanner;
 
-public class HienThiLoiChao {
+public class SayHello {
     public static void main(String[] args) {
         System.out.println("Enter Your Name: ");
         Scanner scanner = new Scanner(System.in);
