@@ -6,27 +6,29 @@ import java.util.Scanner;
 public class MergeArray {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int[] array1= new int[2];
+        int[] array1 = new int[2];
         int[] array2 = new int[3];
-        int length = array1.length+array2.length;
-        int[] array3= new int[length];
-
-        for (int i =0; i < array1.length; i++) {
-            System.out.print("Nhập phần tử thứ "+i+" của mảng thứ 1: ");
-            array1[i]=Integer.parseInt(scanner.nextLine());
-            array3[i]=array1[i];
-
+        int length = array1.length + array2.length;
+        int[] newArr = new int[length];
+        for (int i = 0; i < array1.length; i++) {
+            System.out.print("Nhập phần tử thứ " + i + " của mảng thứ 1: ");
+            array1[i] = Integer.parseInt(scanner.nextLine());
         }
-
-        System.out.print("Phần tử của mảng 3 sau khi thêm mảng 1 vào");
-        System.out.println(Arrays.toString(array3));
-        for (int j = array3[array2.length]; j <array3.length-1; j++) {
-            System.out.println("Nhập phần tử thứ "+j+" của mảng thứ 2: ");
-            array2[j]=Integer.parseInt(scanner.nextLine());
-            array3[j]=array2[j];
+        System.out.println("Mảng thứ 1: " + Arrays.toString(array1));
+        for (int i = 0; i < array2.length; i++) {
+            System.out.print("Nhập phần tử thứ " + i + " của mảng thứ 2: ");
+            array2[i] = Integer.parseInt(scanner.nextLine());
         }
-        System.out.println("Phần tử của mảng 3 sau khi thêm mảng 2 vào");
-        System.out.println(Arrays.toString(array3));
-
+        System.out.println("Mảng thứ 2: " + Arrays.toString(array2));
+        int index = 0;
+        for (int i = 0; i < array1.length; i++) {
+            newArr[index] = array1[i];
+            index++;
+        }
+        for (int i = 0; i < array2.length; i++) {
+            newArr[index] = array2[i];
+            index++;
+        }
+        System.out.println("Mảng sau khi gộp lại là " + Arrays.toString(newArr));
     }
 }
