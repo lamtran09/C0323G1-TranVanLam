@@ -57,7 +57,6 @@ public class ShowTypes {
                         }
                         System.out.println();
                     }
-
                     break;
                 case 3:
                     for (int i = 0; i <= 5; i++) {
@@ -77,11 +76,8 @@ public class ShowTypes {
                 default:
                     System.out.println("Warning!!! Entered wrong, please re-enter");
                     break;
-
             }
         }
         while (select != 4);
     }
 }
-
-

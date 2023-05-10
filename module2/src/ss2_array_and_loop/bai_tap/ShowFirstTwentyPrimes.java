@@ -6,7 +6,7 @@ public class ShowFirstTwentyPrimes {
     public static void main(String[] args) {
         int count = 0;
         int num = 2;
-        int length;        
+        int length;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập độ dài số nguyên tố mà bạn muốn in ra");
         length = Integer.parseInt(scanner.nextLine());
@@ -31,11 +31,3 @@ public class ShowFirstTwentyPrimes {
         }
     }
 }
-
-
-
-
-
-
-
-

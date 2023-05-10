@@ -1,4 +1,4 @@
-package ss2_array_and_loop.thuc_hanh;
+package ss3_method.thuc_hanh;
 
 import java.util.Scanner;
 
