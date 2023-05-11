@@ -15,7 +15,7 @@ public class TotalDiagonal {
         for (int i = 0; i < n; i++) {
             arr[i] = new int[m];
             for (int j = 0; j < arr[i].length; j++) {
-                System.out.print("Nhập giá trị phần tử thứ " + j + " mảng " + i+": ");
+                System.out.print("Nhập giá trị phần tử thứ " + j + " mảng " + i + ": ");
                 arr[i][j] = Integer.parseInt(scanner.nextLine());
             }
         }
@@ -27,12 +27,9 @@ public class TotalDiagonal {
         }
         int tatolDiagonal = 0;
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                if (i == j) {
-                    tatolDiagonal += arr[i][j];
-                }
-            }
+            tatolDiagonal += arr[i][i];
         }
-        System.out.println("Tổng các số đường chéo chính của ma trận là: "+tatolDiagonal);
+        System.out.println("Tổng các số đường chéo chính của ma trận là: " + tatolDiagonal);
     }
 }
+
