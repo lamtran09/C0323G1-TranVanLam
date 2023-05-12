@@ -5,51 +5,30 @@ import java.util.Date;
 public class StopWatch {
     long millisecondStart;
     long millisecondEnd;
-    private Date startTime;
-    private Date endTime;
 
-    public StopWatch() {
-        this.startTime = new Date();
-        this.endTime = new Date();
-    }
 
-    public Date getStartTime() {
-        return startTime;
-    }
 
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
-    }
-
-    public Date getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
-    }
-    public void start(){
+    public void start() {
         this.millisecondStart = System.currentTimeMillis();
-        this.startTime = new Date(millisecondStart);
-        System.out.println(startTime);
+        System.out.println(millisecondStart);
 
     }
-    public void  stop(){
+
+    public void stop() {
         this.millisecondEnd = System.currentTimeMillis();
-        this.endTime = new Date(millisecondEnd);
-        System.out.println(endTime);
+        System.out.println(millisecondEnd);
     }
 
-    public long getElapsedTime(){
-        long elapsedTime = this.millisecondEnd -this.millisecondStart;
-        return  elapsedTime;
+    public long getElapsedTime() {
+        return this.millisecondEnd - this.millisecondStart;
     }
 
     @Override
     public String toString() {
         return "StopWatch{" +
-                "startTime=" + startTime +
-                ", endTime=" + endTime +
+                "millisecondStart=" + millisecondStart +
+                ", millisecondEnd=" + millisecondEnd +
                 '}';
     }
 }
+

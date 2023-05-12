@@ -3,7 +3,6 @@ package ss4_class_and_object.bai_tap.stop_watch;
 public class Main {
     public static void main(String[] args) {
         StopWatch clock = new StopWatch();
-        System.out.println(clock);
         clock.start();
         int[] arr= new int[70000];
         int n = arr.length;
@@ -17,7 +16,6 @@ public class Main {
             arr[i] = temp;
         }
         clock.stop();
-        System.out.println(clock.getElapsedTime());
-        System.out.println(clock.getEndTime());
+        System.out.println(clock.getElapsedTime()+" milliseconds");
     }
 }
