@@ -7,6 +7,7 @@ public class Main {
 
     Cylinder cylinder = new Cylinder(5,4,"green");
         System.out.println(cylinder.getV());
-        System.out.println(cylinder.getArea()); 
+        System.out.println(cylinder.getArea());
+        System.out.println(cylinder);
     }
 }
