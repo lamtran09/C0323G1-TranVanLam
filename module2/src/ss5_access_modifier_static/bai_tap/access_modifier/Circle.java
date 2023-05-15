@@ -1,27 +1,27 @@
 package ss5_access_modifier_static.bai_tap.access_modifier;
 
 public class Circle {
-    private double radios = 1.0;
+    private double radius = 1.0;
     private String color = "Red";
 
     public Circle() {
 
     }
 
-    public Circle(double radios) {
-        this.radios = radios;
+    public Circle(double radius) {
+        this.radius = radius;
     }
 
-    public double getRadios() {
-        return radios;
+    public double getRadius() {
+        return radius;
     }
 
-    public void setRadios(double radios) {
-        this.radios = radios;
+    public void setRadius(double radius) {
+        this.radius = radius;
     }
 
     public double getArea() {
-        return this.radios * this.radios * 3.14;
+        return this.radius * this.radius * 3.14;
     }
     // access modifier (private) là thành phần của lớp
 //    private double getArea() {

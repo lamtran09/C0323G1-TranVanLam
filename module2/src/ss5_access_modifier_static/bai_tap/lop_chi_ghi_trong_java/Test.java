@@ -4,7 +4,8 @@ public class Test {
     public static void main(String[] args) {
         Student student = new Student();
         System.out.println(student);
-        System.out.println(student.getClasses());
-        System.out.println(student.getName());
+        student.setName("Hello");
+        student.setClasses("C03");
+        System.out.println(student);
     }
 }

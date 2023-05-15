@@ -7,17 +7,10 @@ public class Student {
     public Student() {
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getClasses() {
-        return classes;
-    }
 
     void setClasses(String classes) {
         this.classes = classes;
