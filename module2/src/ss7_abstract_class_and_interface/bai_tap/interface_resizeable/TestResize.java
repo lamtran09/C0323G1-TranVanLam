@@ -66,7 +66,7 @@ public class TestResize {
                         length = Integer.parseInt(scanner.nextLine());
                         System.out.print("Nhập vào chiều rộng hình chữ nhật: ");
                         width = Integer.parseInt(scanner.nextLine());
-                        if (length > width || length > 0 || width > 0) {
+                        if (length > width || (length > 0 && width > 0)) {
                             Rectangle rectangle = new Rectangle(length, width);
                             System.out.print("Nhập vào tỷ lệ phần trăm: ");
                             percent = Integer.parseInt(scanner.nextLine());

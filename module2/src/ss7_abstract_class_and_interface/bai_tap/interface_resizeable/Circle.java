@@ -28,6 +28,7 @@ public class Circle implements Resizeable {
     /**
      * resize là kích thước phần tăng lên
      * @param percent phần trăm mà người dùng nhập vào
+     * @creator: Lam
      */
     @Override
     public void resize(double percent) {

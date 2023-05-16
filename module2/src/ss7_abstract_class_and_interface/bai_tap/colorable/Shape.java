@@ -1,6 +1,6 @@
-package ss6_inheritance.thuc_hanh;
+package ss7_abstract_class_and_interface.bai_tap.colorable;
 
-public class Shape {
+public class Shape{
     private String color = "green";
     private boolean filled = true;
 
@@ -11,7 +11,6 @@ public class Shape {
         this.color = color;
         this.filled = filled;
     }
-
 
     public String getColor() {
         return color;
@@ -36,5 +35,5 @@ public class Shape {
                 + " and "
                 + (isFilled() ? "filled" : "not filled");
     }
-}
 
+}

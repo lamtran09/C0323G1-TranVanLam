@@ -1,12 +1,17 @@
 package ss7_abstract_class_and_interface.bai_tap.colorable;
 
-public class Square implements Colorable{
+public class Square extends Shape implements Colorable{
     private int edge;
 
     public Square() {
     }
 
     public Square(int edge) {
+        this.edge = edge;
+    }
+
+    public Square(String color, boolean filled, int edge) {
+        super(color, filled);
         this.edge = edge;
     }
 
@@ -17,6 +22,7 @@ public class Square implements Colorable{
     public void setEdge(int edge) {
         this.edge = edge;
     }
+
     /**
      *
      * @return kết quả của diện tích hình vuông
@@ -35,7 +41,7 @@ public class Square implements Colorable{
 
     @Override
     public String toString() {
-        return "Square{" +
+        return super.toString()+ "Square{" +
                 "edge=" + edge +
                 ", area=" + getArea() +
                 '}';
