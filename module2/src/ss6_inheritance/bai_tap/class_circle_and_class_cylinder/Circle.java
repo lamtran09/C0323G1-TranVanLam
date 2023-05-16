@@ -1,8 +1,8 @@
 package ss6_inheritance.bai_tap.class_circle_and_class_cylinder;
 
 public class Circle {
-    protected double radius;
-    protected String color;
+    private double radius;
+    private String color;
 
     public Circle() {
     }
