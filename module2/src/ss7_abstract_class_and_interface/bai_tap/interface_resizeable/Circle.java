@@ -10,6 +10,10 @@ public class Circle implements Resizeable {
         this.radius = radius;
     }
 
+    /**
+     *
+     * @return kết quả của diện tích hình tròn
+     */
     public double getArea() {
         return (this.radius * this.radius) * 3.14;
     }
@@ -21,6 +25,10 @@ public class Circle implements Resizeable {
                 "Area: " + getArea();
     }
 
+    /**
+     * resize là kích thước phần tăng lên
+     * @param percent phần trăm mà người dùng nhập vào
+     */
     @Override
     public void resize(double percent) {
         double resize = getArea() * percent / 100;
