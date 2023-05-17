@@ -6,5 +6,28 @@ public interface Resizeable {
      * @param percent phần trăm mà người dùng nhập vào
      * @creator: Lam
      */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     void resize(double percent);
 }

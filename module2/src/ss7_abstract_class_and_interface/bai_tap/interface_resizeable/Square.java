@@ -1,20 +1,20 @@
 package ss7_abstract_class_and_interface.bai_tap.interface_resizeable;
 
 public class Square implements Resizeable {
-    private int edge;
+    private double edge;
 
     public Square() {
     }
 
-    public Square(int edge) {
+    public Square(double edge) {
         this.edge = edge;
     }
 
-    public int getEdge() {
+    public double getEdge() {
         return edge;
     }
 
-    public void setEdge(int edge) {
+    public void setEdge(double edge) {
         this.edge = edge;
     }
     /**
@@ -31,16 +31,13 @@ public class Square implements Resizeable {
      */
     @Override
     public void resize(double percent) {
-        double resize = (getArea()*percent/100);
-        System.out.println("Kích thước được tăng lên là: " + resize);
-        System.out.println("Diện tích ban đầu: " + getArea() + ", " + "Diện tích sau khi tăng kích thước: " + (getArea() + resize));
+        setEdge(getEdge()+getEdge()*(percent/100));
     }
-
     @Override
     public String toString() {
         return "Square{" +
-                "edge=" + edge +
-                "area=" + getArea() +
+                "Edge= " + edge +
+                ",Area= " + getArea() +
                 '}';
     }
 }

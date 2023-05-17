@@ -19,10 +19,22 @@ public class Circle implements Resizeable {
     }
 
 
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
     @Override
     public String toString() {
-        return "Circle{}" +
-                "Area: " + getArea();
+        return "Circle{" +
+                "Area: " + getArea()+
+                ", radius:" +
+
+                 getRadius()+
+                "}";
     }
 
     /**
@@ -32,8 +44,6 @@ public class Circle implements Resizeable {
      */
     @Override
     public void resize(double percent) {
-        double resize = getArea() * percent / 100;
-        System.out.println("Kích thước được tăng lên là: " + resize);
-        System.out.println("Diện tích ban đầu: " + getArea() + ", " + "Diện tích sau khi tăng kích thước: " + (getArea() + resize));
+        setRadius(getRadius()+getRadius()*(percent / 100));
     }
 }

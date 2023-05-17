@@ -15,7 +15,7 @@ public class TestResize {
         int percent;
         double radius;
         // độ dài cạnh hình vuông
-        int egde;
+        double egde;
         int check;
         // chiều dài hình chữ nhật
         int length;
@@ -34,11 +34,13 @@ public class TestResize {
                     while (true) {
                         System.out.print("Nhập vào giá trị của bán kính hình tròn: ");
                         radius = Double.parseDouble(scanner.nextLine());
+                        Circle circle = new Circle(radius);
+                        System.out.println(circle);
                         if (radius > 0) {
-                            Circle circle = new Circle(radius);
                             System.out.print("Nhập vào tỷ lệ phần trăm: ");
                             percent = Integer.parseInt(scanner.nextLine());
                             circle.resize(percent);
+                            System.out.println(circle);
                             break;
                         } else {
                             System.out.println("Nhập lại bạn nhé, Warning đừng làm tôi thất vọng!!! ");
@@ -47,13 +49,15 @@ public class TestResize {
                     break;
                 case 2:
                     while (true) {
-                        System.out.print("Nhập vào giá trị của bán kính hình tròn: ");
-                        egde = Integer.parseInt(scanner.nextLine());
+                        System.out.print("Nhập vào giá trị cạnh của hình vuông: ");
+                        egde = Double.parseDouble(scanner.nextLine());
                         if (egde > 0) {
                             Square square = new Square(egde);
+                            System.out.println(square);
                             System.out.print("Nhập vào tỷ lệ phần trăm: ");
                             percent = Integer.parseInt(scanner.nextLine());
                             square.resize(percent);
+                            System.out.println(square);
                             break;
                         } else {
                             System.out.println("Nhập lại bạn nhé, Warning đừng làm tôi thất vọng!!! ");
@@ -66,11 +70,13 @@ public class TestResize {
                         length = Integer.parseInt(scanner.nextLine());
                         System.out.print("Nhập vào chiều rộng hình chữ nhật: ");
                         width = Integer.parseInt(scanner.nextLine());
+                        Rectangle rectangle = new Rectangle(length, width);
                         if (length > width || (length > 0 && width > 0)) {
-                            Rectangle rectangle = new Rectangle(length, width);
+                            System.out.println(rectangle);
                             System.out.print("Nhập vào tỷ lệ phần trăm: ");
                             percent = Integer.parseInt(scanner.nextLine());
                             rectangle.resize(percent);
+                            System.out.println(rectangle);
                             break;
                         } else {
                             System.out.println("Nhập lại bạn nhé, Warning đừng làm tôi thất vọng!!! ");

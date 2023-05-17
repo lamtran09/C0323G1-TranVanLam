@@ -1,30 +1,30 @@
 package ss7_abstract_class_and_interface.bai_tap.interface_resizeable;
 
 public class Rectangle implements Resizeable {
-    private int length;
-    private int width;
+    private double length;
+    private double width;
 
     public Rectangle() {
     }
 
-    public Rectangle(int length, int width) {
+    public Rectangle(double length, double width) {
         this.length = length;
         this.width = width;
     }
 
-    public int getLength() {
+    public double getLength() {
         return length;
     }
 
-    public void setLength(int length) {
+    public void setLength(double length) {
         this.length = length;
     }
 
-    public int getWidth() {
+    public double getWidth() {
         return width;
     }
 
-    public void setWidth(int width) {
+    public void setWidth(double width) {
         this.width = width;
     }
     /**
@@ -42,8 +42,16 @@ public class Rectangle implements Resizeable {
      */
     @Override
     public void resize(double percent) {
-        double resize = (getArea()*percent/100);
-        System.out.println("Kích thước được tăng lên là: " + resize);
-        System.out.println("Diện tích ban đầu: " + getArea() + ", " + "Diện tích sau khi tăng kích thước: " + (getArea() + resize));
+       setLength(getLength()+getLength()*(percent/100));
+       setWidth(getWidth()+getWidth()*(percent/100));
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "length= " + length +
+                ", width= " + width +
+                ", area= " + getArea() +
+                '}';
     }
 }
