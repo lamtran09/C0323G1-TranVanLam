@@ -14,8 +14,6 @@ public class Main {
         int scorePlayer1 = Integer.parseInt(scanner.nextLine());
         System.out.println("Nhập điểm của "+ player2);
         int scorePlayer2 = Integer.parseInt(scanner.nextLine());
-        System.out.println(TennisGame.getPoint(scorePlayer1,scorePlayer2));
-        System.out.println(TennisGame.getAdvantage(player1 ,player2,scorePlayer1,scorePlayer2));
-
+        System.out.println(TennisGame.getScore(player1,player2,scorePlayer1,scorePlayer2));
     }
 }
