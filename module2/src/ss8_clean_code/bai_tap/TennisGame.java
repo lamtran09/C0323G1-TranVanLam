@@ -1,10 +1,11 @@
 package ss8_clean_code.bai_tap;
 
 public class TennisGame {
-    static final int NO_SCORE = 0;
-    static final int SCORE_FIRST = 1;
-    static final int SCORE_SECOND = 2;
-    static final int SCORE_THIRD = 3;
+    private static final int NO_SCORE = 0;
+    private static final int SCORE_FIRST = 1;
+    private static final int SCORE_SECOND = 2;
+    private static final int SCORE_THIRD = 3;
+
     public static String getScore(String player1Name, String player2Name, int scorePlayer1, int scorePlayer2) {
         String score = "";
         int tempScore;
@@ -54,6 +55,7 @@ public class TennisGame {
         }
         return score;
     }
+
     private static String getAdvantage(String player1Name, String player2Name, int scorePlayer1, int scorePlayer2) {
         String score;
         int minusResult = scorePlayer1 - scorePlayer2;
