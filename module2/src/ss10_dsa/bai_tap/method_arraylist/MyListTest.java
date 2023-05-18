@@ -1,13 +1,16 @@
 package ss10_dsa.bai_tap.method_arraylist;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MyListTest {
     public static void main(String[] args) {
-        MyList<Object> myList = new MyList<>();
-        ArrayList<Integer> arrayList;
-        arrayList = new ArrayList<>();
-        arrayList.add(9);
-        System.out.println(arrayList.get(0));
+        MyList<Integer> integer = new MyList<>();
+        integer.addElements(0,1);
+        integer.addElements(1,2);
+        integer.addElements(4,4);
+        integer.addElements(6,5);
+        System.out.println(integer);
     }
 }
