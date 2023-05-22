@@ -1,7 +1,7 @@
 package ss12_java_collection_framework.bai_tap.model;
 
 public class Product {
-    private int id;
+    private String id;
     private String nameProduct;
     private float price;
     private int quantity;
@@ -9,18 +9,18 @@ public class Product {
     public Product() {
     }
 
-    public Product(int id, String nameProduct, float price, int quantity) {
+    public Product(String id, String nameProduct, float price, int quantity) {
         this.id = id;
         this.nameProduct = nameProduct;
         this.price = price;
         this.quantity = quantity;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

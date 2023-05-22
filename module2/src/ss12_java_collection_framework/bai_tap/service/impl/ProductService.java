@@ -33,7 +33,7 @@ public class ProductService implements IProductService {
         if (products == null) {
             System.out.println("không tìm thấy: ");
         } else {
-            productRepository.remove(Integer.parseInt(id));
+            productRepository.remove(products);
             System.out.println("đã xoá thành công");
         }
     }
@@ -50,7 +50,7 @@ public class ProductService implements IProductService {
     public void addProduct() {
 //        int id, String nameProduct, float price, int quantity
         System.out.print("Nhập id: ");
-        int id = Integer.parseInt(scanner.nextLine());
+        String id =scanner.nextLine();
         System.out.print("Nhập tên sản phẩm: ");
         String nameProduct = scanner.nextLine();
         System.out.print("Nhập giá sản phẩm: ");
