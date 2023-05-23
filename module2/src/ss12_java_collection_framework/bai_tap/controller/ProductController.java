@@ -5,8 +5,8 @@ import ss12_java_collection_framework.bai_tap.service.impl.ProductService;
 import java.util.Scanner;
 
 public class ProductController {
-    public static Scanner scanner = new Scanner(System.in);
-    ProductService productService = new ProductService();
+    private static Scanner scanner = new Scanner(System.in);
+    private ProductService productService = new ProductService();
     public void showProduct() {
         String choice;
         do {
@@ -21,6 +21,8 @@ public class ProductController {
             choice = scanner.nextLine();
             switch (choice) {
                 case "0":
+                    System.out.println("Tạm biệt!!!");
+                    break;
                 case "1":
                     productService.addProduct();
                     break;
@@ -31,7 +33,11 @@ public class ProductController {
                     productService.display();
                     break;
                 case "5":
+                    productService.search();
+                    break;
                 case "6":
+                    productService.sort();
+                    break;
                 default:
                     System.out.println("Nhập sai , Nhập lại!!!");
                     break;

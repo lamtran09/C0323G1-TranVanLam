@@ -10,8 +10,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ProductService implements IProductService {
-    Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
     private ProductRepository productRepository = new ProductRepository();
+
     @Override
     public void display() {
         List<Product> products = productRepository.display();
@@ -24,7 +25,6 @@ public class ProductService implements IProductService {
      * @creator: Lâm
      * phương thức để xóa sản phẩm
      */
-
     @Override
     public void removeProduct() {
         System.out.print("nhập id mà bạn muốn xoá: ");
@@ -38,9 +38,37 @@ public class ProductService implements IProductService {
         }
     }
 
+    @Override
+    public void search() {
+        System.out.print("Nhập tên sản phẩm bạn muốn tìm: ");
+        String name = scanner.nextLine();
+        if (productRepository.search(name).size() == 0) {
+            System.out.println("No");
+        } else {
+            for (Product p : productRepository.search(name)) {
+                System.out.println(p);
+            }
+        }
+    }
 
-
-
+    @Override
+    public void sort() {
+        System.out.println("Sắp xếp sản phẩm tăng dần, giảm dần theo giá\n" +
+                "1.Sắp xếp sản phẩm tăng dần theo giá\n" +
+                "2.Sắp xếp sản phẩm giảm dần theo giá\n");
+        String choice = scanner.nextLine();
+        switch (choice){
+            case "1":
+                productRepository.sortInAscendingOrder();
+                break;
+            case "2":
+                productRepository.sortDescending();
+                break;
+            default:
+                System.out.println("Nhập sai, Nhập lại");
+                break;
+        }
+    }
 
     /**
      * @creator: Lâm
@@ -50,18 +78,15 @@ public class ProductService implements IProductService {
     public void addProduct() {
 //        int id, String nameProduct, float price, int quantity
         System.out.print("Nhập id: ");
-        String id =scanner.nextLine();
+        String id = scanner.nextLine();
         System.out.print("Nhập tên sản phẩm: ");
         String nameProduct = scanner.nextLine();
         System.out.print("Nhập giá sản phẩm: ");
         float price = Float.parseFloat(scanner.nextLine());
         System.out.print("Nhập số lượng sản phẩm: ");
         int quantity = Integer.parseInt(scanner.nextLine());
-        Product product = new Product(id,nameProduct,price,quantity);
+        Product product = new Product(id, nameProduct, price, quantity);
         productRepository.add(product);
     }
-
-
-
-    }
+}
 
