@@ -9,5 +9,4 @@ public interface IProductRepository {
     void add(Product product);
     void remove(Product product);
     Product getId(String id);
-
 }
