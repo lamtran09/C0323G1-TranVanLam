@@ -42,6 +42,5 @@ public class TeacherService implements ITeacherService {
         String id = scanner.nextLine();
         List<Teacher> teacherList = teacherRepository.displayTeacher();
         teacherList.removeIf(p -> p.getId().equals(id));
-
     }
 }

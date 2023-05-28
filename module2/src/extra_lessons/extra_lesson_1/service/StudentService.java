@@ -18,7 +18,7 @@ public class StudentService implements IStudentService {
             System.out.println(student);
         }
     }
-
+    private float score;
     @Override
     public void addStudent() {
 //        String id, String name, int dayOfBirth, String gender, String classes, float score
@@ -33,15 +33,22 @@ public class StudentService implements IStudentService {
         System.out.print("Nhập lớp của học viên: ");
         String classes = scanner.nextLine();
         System.out.print("Nhập điểm của học viên: ");
-        float score = Float.parseFloat(scanner.nextLine());
+        while (true) {
+            try {
+                score = Float.parseFloat(scanner.nextLine());
+                break;
+            } catch (NumberFormatException numberFormatException) {
+                System.out.println("Nhập sai Nhập lại");
+            }
+        }
         Students students = new Students(id, name, dayOfBirth, gender, classes, score);
         studentRepository.addStudent(students);
     }
-
+    private String id;
     @Override
     public void removeStudent() {
         System.out.print("Nhập id giảng viên bạn muốn xóa: ");
-        String id = scanner.nextLine();
+         id = scanner.nextLine();
         List<Students> studentsList = studentRepository.displayStudent();
         for (Students b : studentsList) {
             if (b.getId().equals(id)) {

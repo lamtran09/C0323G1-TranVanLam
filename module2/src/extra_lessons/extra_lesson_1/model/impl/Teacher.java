@@ -23,8 +23,12 @@ public class Teacher extends Person {
 
     @Override
     public String toString() {
-        return super.toString()+"Teacher{" +
+        return "Teacher{" + super.toString() +
                 "specialize='" + specialize + '\'' +
                 '}';
+    }
+
+    public String readAndWriteToFile() {
+        return getId() + "," + getName() + "," + getDayOfBirth() + "," + isGender() + "," + specialize;
     }
 }
