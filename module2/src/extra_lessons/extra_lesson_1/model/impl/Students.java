@@ -33,9 +33,13 @@ public class Students extends Person {
 
     @Override
     public String toString() {
-        return "Students{" + super.toString()+
+        return "Students{" + super.toString() +
                 "classes='" + classes + '\'' +
                 ", score=" + score +
                 '}';
+    }
+
+    public String readAndWriteToFile() {
+        return getId() + "," + getName() + "," + getDayOfBirth() + "," + isGender() + "," + getClasses() + "," + getScore();
     }
 }

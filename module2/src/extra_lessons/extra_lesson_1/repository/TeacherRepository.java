@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TeacherRepository implements ITeacherRepository {
-    //private static List<Teacher> teacherList = ReadWriteFileTeacher.readToFile("src/extra_lessons/extra_lesson_1/untils/data.csv");
+   private List<Teacher> teacherList = new ArrayList<>();
 
     @Override
     public List<Teacher> displayTeacher() {
@@ -25,7 +25,6 @@ public class TeacherRepository implements ITeacherRepository {
 
     @Override
     public void removeTeacher(Teacher teacher) {
-        List<Teacher>teacherList = ReadWriteFileTeacher.readToFile("src/extra_lessons/extra_lesson_1/untils/data.csv");
         teacherList.remove(teacher);
         ReadWriteFileTeacher.writeToFile("src/extra_lessons/extra_lesson_1/untils/data.csv",teacherList);
     }
