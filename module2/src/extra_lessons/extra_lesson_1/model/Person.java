@@ -1,47 +1,51 @@
 package extra_lessons.extra_lesson_1.model;
 
 public abstract class Person {
-    private String id;
-    private  String name;
-    private String dayOfBirth;
+    /**
+     * @creator: Lâm
+     * @date : 30/05/2023
+     */
+    // Mã, tên, ngày sinh, giới tính
+    private String idPerson;
+    private String namePerson;
+    private String dateOfBirth;
     private String gender;
 
     public Person() {
     }
 
-    public Person(String id, String name, String dayOfBirth, String gender) {
-        this.id = id;
-        this.name = name;
-        this.dayOfBirth = dayOfBirth;
+    public Person(String idPerson, String namePerson, String dateOfBirth, String gender) {
+        this.idPerson = idPerson;
+        this.namePerson = namePerson;
+        this.dateOfBirth = dateOfBirth;
         this.gender = gender;
     }
 
-
-    public String getId() {
-        return id;
+    public String getIdPerson() {
+        return idPerson;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setIdPerson(String idPerson) {
+        this.idPerson = idPerson;
     }
 
-    public String getName() {
-        return name;
+    public String getNamePerson() {
+        return namePerson;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNamePerson(String namePerson) {
+        this.namePerson = namePerson;
     }
 
-    public String getDayOfBirth() {
-        return dayOfBirth;
+    public String getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setDayOfBirth(String dayOfBirth) {
-        this.dayOfBirth = dayOfBirth;
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
-    public String isGender() {
+    public String getGender() {
         return gender;
     }
 
@@ -51,11 +55,9 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", dayOfBirth=" + dayOfBirth +
-                ", gender=" + gender
-               ;
+        return "idPerson='" + idPerson + '\'' +
+                ", namePerson='" + namePerson + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", gender=" + gender;
     }
 }
