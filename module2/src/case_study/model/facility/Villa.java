@@ -1,11 +1,9 @@
-package case_study.model.house;
+package case_study.model.facility;
 
-import case_study.model.ResortFurama;
-
-public class Villa extends ResortFurama {
+public class Villa extends Facility {
     private String roomStandard;
     private float swimmingArea;
-    private int floor;
+    private int numberOfFloors;
 
     public Villa() {
     }
@@ -20,13 +18,13 @@ public class Villa extends ResortFurama {
      * @param rentalType Kiểu thuê (bao gồm thuê theo năm, tháng, ngày, giờ)
      * @param roomStandard Tiêu chuẩn phòng
      * @param swimmingArea Diện tích hồ bơi
-     * @param floor Số tầng
+     * @param numberOfFloors Số tầng
      */
-    public Villa(int idService, String nameService, float usableArea, float rentalCosts, int maximumPeople, String rentalType, String roomStandard, float swimmingArea, int floor) {
+    public Villa(int idService, String nameService, float usableArea, float rentalCosts, int maximumPeople, String rentalType, String roomStandard, float swimmingArea, int numberOfFloors) {
         super(idService, nameService, usableArea, rentalCosts, maximumPeople, rentalType);
         this.roomStandard = roomStandard;
         this.swimmingArea = swimmingArea;
-        this.floor = floor;
+        this.numberOfFloors = numberOfFloors;
     }
 
     public String getRoomStandard() {
@@ -45,12 +43,12 @@ public class Villa extends ResortFurama {
         this.swimmingArea = swimmingArea;
     }
 
-    public int getFloor() {
-        return floor;
+    public int getNumberOfFloors() {
+        return numberOfFloors;
     }
 
-    public void setFloor(int floor) {
-        this.floor = floor;
+    public void setNumberOfFloors(int numberOfFloors) {
+        this.numberOfFloors = numberOfFloors;
     }
 
     @Override
@@ -58,7 +56,7 @@ public class Villa extends ResortFurama {
         return "Villa{" +
                 "roomStandard='" + roomStandard + '\'' +
                 ", swimmingArea=" + swimmingArea +
-                ", floor=" + floor +
+                ", floor=" + numberOfFloors +
                 '}';
     }
 }

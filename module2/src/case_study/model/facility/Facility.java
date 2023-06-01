@@ -1,6 +1,6 @@
-package case_study.model;
+package case_study.model.facility;
 
-public abstract class ResortFurama {
+public abstract class Facility {
     private int idService;
     private String nameService;
     private float usableArea;
@@ -8,7 +8,7 @@ public abstract class ResortFurama {
     private int maximumPeople;
     private String rentalType;
 
-    public ResortFurama() {
+    public Facility() {
     }
 
     /**
@@ -21,7 +21,7 @@ public abstract class ResortFurama {
      * @creator: Lâm
      * @date : 28/05/2023
      */
-    public ResortFurama(int idService, String nameService, float usableArea, float rentalCosts, int maximumPeople, String rentalType) {
+    public Facility(int idService, String nameService, float usableArea, float rentalCosts, int maximumPeople, String rentalType) {
         this.idService = idService;
         this.nameService = nameService;
         this.usableArea = usableArea;
