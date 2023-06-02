@@ -1,5 +1,7 @@
 package case_study.controller;
 
+import case_study.controller.utils.*;
+
 import java.util.Scanner;
 
 public class FuramaController {
@@ -18,10 +20,20 @@ public class FuramaController {
             String choice = scanner.nextLine();
             switch (choice) {
                 case "1":
+                    EmployeeController.menuEmployee();
+                    break;
                 case "2":
+                    CustomerController.menuCustomer();
+                    break;
                 case "3":
+                    FacilityController.menuFacility();
+                    break;
                 case "4":
+                    BookingController.menuBooking();
+                    break;
                 case "5":
+                    PromotionController.menuPromotion();
+                    break;
                 case "6":
                     flag = false;
                     System.out.println("---GoodBye---");

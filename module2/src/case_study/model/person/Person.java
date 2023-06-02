@@ -4,9 +4,9 @@ public abstract class Person {
     private String idPerSon;
     private String namePerson;
     private String dateOfBirth;
-    private boolean gender;
-    private int identityCard;
-    private int phoneNumber;
+    private String gender;
+    private String identityCard;
+    private String phoneNumber;
     private String email;
 
     public Person() {
@@ -23,7 +23,7 @@ public abstract class Person {
      * @param email  Email
      */
 
-    public Person(String idPerSon, String namePerson, String dateOfBirth, boolean gender, int identityCard, int phoneNumber, String email) {
+    public Person(String idPerSon, String namePerson, String dateOfBirth, String gender, String identityCard, String phoneNumber, String email) {
         this.idPerSon = idPerSon;
         this.namePerson = namePerson;
         this.dateOfBirth = dateOfBirth;
@@ -57,27 +57,27 @@ public abstract class Person {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public boolean isGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(boolean gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
-    public int getIdentityCard() {
+    public String getIdentityCard() {
         return identityCard;
     }
 
-    public void setIdentityCard(int identityCard) {
+    public void setIdentityCard(String identityCard) {
         this.identityCard = identityCard;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
