@@ -4,6 +4,8 @@ import case_study.common.Regex;
 import case_study.common.WageException;
 import case_study.model.person.Employee;
 import case_study.repository.person.EmployeeRepository;
+import extra_lessons.extra_lesson_1.model.small.Students;
+import ss12_java_collection_framework.bai_tap.model.Product;
 
 import java.util.List;
 import java.util.Scanner;
@@ -33,10 +35,16 @@ public class EmployeeService implements IEmployeeService {
             System.out.print("Nhập tên của nhân viên(Chữ đầu viết Hoa): ");
             namePerson = scanner.nextLine();
         } while (!Regex.validateNamePerson(namePerson));
-        System.out.print("Nhập ngày sinh của nhân viên: ");
-        String dateOfBirth = scanner.nextLine();
-        String gender;
+        String dateOfBirth;
         do {
+            System.out.print("Nhập ngày sinh của nhân viên(theo định dạng dd/mm/yyyy): ");
+           dateOfBirth = scanner.nextLine();
+        }while (!Regex.validateDateOfBirth(dateOfBirth));
+
+        String gender;
+        boolean flag;
+        do {
+           flag = true;
             System.out.println("Chọn giới tính của nhân viên\n" +
                     "1.Boy\n" +
                     "2.Girl");
@@ -50,10 +58,12 @@ public class EmployeeService implements IEmployeeService {
                     gender = "Nữ";
                     break;
                 default:
+                    flag = false;
                     System.out.println("Chọn sai chọn lại");
+                    break;
             }
-            break;
-        } while (true);
+
+        } while (!flag);
         String identityCard;
         do {
             System.out.print("Nhập số chứng minh của nhân viên (CMND 9 số - 12 số):");
@@ -70,15 +80,76 @@ public class EmployeeService implements IEmployeeService {
             email = scanner.nextLine();
         } while (!Regex.validateEmail(email));
         String level;
+        boolean flagS2;
         do {
-            System.out.print("Nhập trình độ nhân viên( Trung cấp, Cao đẳng, Đại học và Sau đại học): ");
+            flagS2 = true;
+            //Trung cấp, Cao đẳng, Đại học và Sau đại học
+            System.out.println("Chọn trình độ nhân viên\n" +
+                    "1.Trung cấp\n" +
+                    "2.Cao đẳng\n" +
+                    "3.Đại học\n" +
+                    "4.Sau đại học");
+            System.out.print("Chọn: ");
             level = scanner.nextLine();
-        } while (!Regex.validateLevel(level));
+            switch (level) {
+                case "1":
+                    level = "Trung cấp";
+                    break;
+                case "2":
+                    level = "Cao đẳng";
+                    break;
+                case "3":
+                    level = "Đại học";
+                    break;
+                case "4":
+                    level = "Sau đại học";
+                    break;
+                default:
+                    flagS2 = false;
+                    System.out.println("chọn sai chọn lại");
+                    break;
+            }
+
+        } while (!flagS2);
         String location;
+        boolean flagS3;
         do {
-            System.out.print("Nhập vị trí nhân viên (lễ tân, phục vụ, chuyên viên, giám sát, quản lý, giám đốc):");
+            flagS3  = true;
+            //(lễ tân, phục vụ, chuyên viên, giám sát, quản lý, giám đốc)
+            System.out.println("Chọn vị trí nhân viên\n" +
+                    "1.lễ tân\n" +
+                    "2.phục vụ\n" +
+                    "3.chuyên viên\n" +
+                    "4.giám sát\n" +
+                    "5.quản lý\n" +
+                    "6.giám đốc");
+            System.out.print("Chọn: ");
             location = scanner.nextLine();
-        } while (!Regex.validateLocation(location));
+            switch (location) {
+                case "1":
+                    location = "lễ tân";
+                    break;
+                case "2":
+                    location = "phục vụ";
+                    break;
+                case "3":
+                    location = "chuyên viên";
+                    break;
+                case "4":
+                    location = "giám sát";
+                    break;
+                case "5":
+                    location = "quản lý";
+                    break;
+                case "6":
+                    location = "giám đốc";
+                    break;
+                default:
+                    flagS3  = false;
+                    System.out.println("Chọn sai chọn lại");
+                    break;
+            }
+        } while (!flagS3);
         long wage;
         while (true) {
             System.out.println("Nhập lương nhân viên: ");
@@ -101,6 +172,39 @@ public class EmployeeService implements IEmployeeService {
 
     @Override
     public void removeEmployee() {
+        System.out.print("Nhập id nhân viên mà bạn muốn xóa: ");
+        String idPerson = scanner.nextLine();
+        Employee employee = employeeRepository.getIdPerson(idPerson);
+        if(employee == null){
+            System.out.println("Không có mã nhân viên");
+        }else {
+            System.out.println("Bạn có muốn xóa nhân viên "+employee.getNamePerson());
+            System.out.println("1.Có\n" +
+                    "2.Suy nghĩ lại");
+            int choice = Integer.parseInt(scanner.nextLine());
+            if(choice == 1){
+                employeeRepository.removeEmployee(employee);
+                System.out.println("Xóa thành công");
+            }
+        }
+    }
 
+    @Override
+    public void editEmployee() {
+
+    }
+
+    @Override
+    public void searchEmployee() {
+        System.out.print("Nhập tên nhân viên bạn muốn tìm: ");
+        String name = scanner.nextLine();
+        List<Employee> employees = employeeRepository.searchEmployee(name);
+        if (employeeRepository.searchEmployee(name).size() == 0) {
+            System.out.println("No");
+        } else {
+            for (Employee p : employees) {
+                System.out.println(p);
+            }
+        }
     }
 }

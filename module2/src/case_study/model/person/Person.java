@@ -13,14 +13,14 @@ public abstract class Person {
     }
 
     /**
-     * @creator: Lâm
-     * @param idPerSon Mã
-     * @param namePerson Họ tên
-     * @param dateOfBirth Ngày sinh
-     * @param gender Giới tính
+     * @param idPerSon     Mã
+     * @param namePerson   Họ tên
+     * @param dateOfBirth  Ngày sinh
+     * @param gender       Giới tính
      * @param identityCard Số CMND
-     * @param phoneNumber Số Điện Thoại
-     * @param email  Email
+     * @param phoneNumber  Số Điện Thoại
+     * @param email        Email
+     * @creator: Lâm
      */
 
     public Person(String idPerSon, String namePerson, String dateOfBirth, String gender, String identityCard, String phoneNumber, String email) {
@@ -91,14 +91,12 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "idPerSon='" + idPerSon + '\'' +
-                ", namePerson='" + namePerson + '\'' +
-                ", dateOfBirth='" + dateOfBirth + '\'' +
-                ", gender=" + gender +
-                ", identityCard=" + identityCard +
-                ", phoneNumber=" + phoneNumber +
-                ", email='" + email + '\'' +
-                '}';
+        return                "idPerSon='" + idPerSon + '\'' +
+                        ", namePerson='" + namePerson + '\'' +
+                        ", dateOfBirth='" + dateOfBirth + '\'' +
+                        ", gender=" + gender +
+                        ", identityCard=" + identityCard +
+                        ", phoneNumber=" + phoneNumber +
+                        ", email='" + email + '\'';
     }
 }

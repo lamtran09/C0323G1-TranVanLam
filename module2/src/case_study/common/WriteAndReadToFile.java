@@ -7,10 +7,11 @@ import java.util.List;
 public class WriteAndReadToFile {
     public static List<String> readToFile(String path){
         List<String> list = new ArrayList<>();
+        File file = new File(path);
         try{
-            FileReader fileReader = new FileReader(path);
+            FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String line = " ";
+            String line = "";
             while ((line = bufferedReader.readLine())!=null){
                 list.add(line);
             }
@@ -21,7 +22,7 @@ public class WriteAndReadToFile {
         } catch (IOException e) {
             System.out.println("Lỗi đọc File!");;
         }
-        return  list;
+        return list;
     }
     public static void writeToFile(String path, List<String> stringList,boolean append){
         File file = new File(path);

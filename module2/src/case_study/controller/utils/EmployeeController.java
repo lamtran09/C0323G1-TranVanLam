@@ -14,8 +14,10 @@ public class EmployeeController {
             System.out.println("----Employee Management-----\n" +
                     "1.Display list employees\n" +
                     "2.Add new employe\n" +
-                    "3.Edit employee\n" +
-                    "4.Return main menu");
+                    "3.Delete employee\n" +
+                    "4.Edit employee\n" +
+                    "5.Search employee\n" +
+                    "6.Return main menu");
             System.out.print("Please choose function: ");
             String choice = scanner.nextLine();
             switch (choice) {
@@ -26,7 +28,14 @@ public class EmployeeController {
                     employeeService.addEmployee();
                     break;
                 case "3":
+                    employeeService.removeEmployee();
+                    break;
                 case "4":
+                    employeeService.editEmployee();
+                    break;
+                case "5":
+                    employeeService.searchEmployee();
+                case "6":
                     flag = false;
                     break;
                 default:
