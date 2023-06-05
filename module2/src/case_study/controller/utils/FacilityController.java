@@ -7,12 +7,12 @@ public class FacilityController {
     public static  void menuFacility() {
         boolean flag = true;
         do {
-            System.out.println("-----Facility Management------\n" +
-                    "1.Display list facility\n" +
-                    "2.Add new facility\n" +
-                    "3.Display list facility maintenance\n" +
-                    "4.Return main menu");
-            System.out.print("Please choose function:  ");
+            System.out.println("-----Quản Lý Cơ Sở------\n" +
+                    "1.Hiển thị danh sách cơ sở\n" +
+                    "2.Thêm mới cơ sở\n" +
+                    "3.Hiển thị danh sách bảo trì cơ sở\n" +
+                    "4.Quay lại menu");
+            System.out.print("Chọn chức năng:  ");
             String choice = scanner.nextLine();
             switch (choice){
                 case "1":
@@ -22,7 +22,7 @@ public class FacilityController {
                     flag = false;
                     break;
                 default:
-                    System.out.println("-------Enter wrong, re-enter-----");
+                    System.out.println("-------Nhập sai, nhập lại-----");
                     break;
             }
         }while(flag);

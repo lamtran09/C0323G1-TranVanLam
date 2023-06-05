@@ -7,11 +7,11 @@ public class PromotionController {
     public static  void menuPromotion() {
         boolean flag = true;
         do {
-            System.out.println("------Promotion Management--------\n" +
-                    "1.Display list customers use service\n" +
-                    "2.Display list customers get voucher\n" +
-                    "3.Return main menu");
-            System.out.print("Please choose function: ");
+            System.out.println("------Quản lý khuyến mãi--------\n" +
+                    "1.Hiển thị danh sách khách hàng sử dụng dịch vụ\n" +
+                    "2.Hiển thị danh sách khách hàng nhận voucher\n" +
+                    "3.Quay lại menu");
+            System.out.print("Chọn chức năng: ");
             String choice = scanner.nextLine();
             switch (choice){
                 case "1":
@@ -20,7 +20,7 @@ public class PromotionController {
                     flag = false;
                     break;
                 default:
-                    System.out.println("-------Enter wrong, re-enter-----");
+                    System.out.println("-------Nhâp sai, nhâp lại-----");
                     break;
             }
         }while(flag);

@@ -7,14 +7,14 @@ public class BookingController {
     public static void menuBooking() {
         boolean flag = true;
         do {
-            System.out.println("--------Booking Managerment---------\n" +
-                    "1.Add new booking\n" +
-                    "2.Display list booking\n" +
-                    "3.Create new contracts\n" +
-                    "4.Display list contracts\n" +
-                    "5.Edit contracts\n" +
-                    "6.Return main menu");
-            System.out.print("Please choose function: ");
+            System.out.println("--------Quản Lý Booking---------\n" +
+                    "1.Thêm mới booking\n" +
+                    "2.Hiển thị danh sách booking\n" +
+                    "3.Tạo mới hợp đồng\n" +
+                    "4.Hiển thị danh sách hợp đồng\n" +
+                    "5.Chỉnh sửa hợp đồng\n" +
+                    "6.Quay lại menu");
+            System.out.print("Chọn chức năng: ");
             String choice = scanner.nextLine();
             switch (choice){
                 case "1":
@@ -26,7 +26,7 @@ public class BookingController {
                     flag = false;
                     break;
                 default:
-                    System.out.println("-------Enter wrong, re-enter-----");
+                    System.out.println("-------Nhập sai, nhập lại-----");
                     break;
             }
         }while(flag);

@@ -11,14 +11,14 @@ public class EmployeeController {
     public static void menuEmployee() {
         boolean flag = true;
         do {
-            System.out.println("----Employee Management-----\n" +
-                    "1.Display list employees\n" +
-                    "2.Add new employe\n" +
-                    "3.Delete employee\n" +
-                    "4.Edit employee\n" +
-                    "5.Search employee\n" +
-                    "6.Return main menu");
-            System.out.print("Please choose function: ");
+            System.out.println("----Quản Lý Nhân Viên-----\n" +
+                    "1.Hiển thị danh sách nhân viên\n" +
+                    "2.thêm mới nhân viên\n" +
+                    "3.Xóa nhân viên\n" +
+                    "4.Chỉnh sửa danh sách nhân viên\n" +
+                    "5.Tìm kiếm nhân viên\n" +
+                    "6.Quay lại menu");
+            System.out.print("Chọn chức năng: ");
             String choice = scanner.nextLine();
             switch (choice) {
                 case "1":
@@ -39,7 +39,7 @@ public class EmployeeController {
                     flag = false;
                     break;
                 default:
-                    System.out.println("-------Enter wrong, re-enter-----");
+                    System.out.println("-------Nhập sai, nhập lại-----");
                     break;
             }
         } while (flag);

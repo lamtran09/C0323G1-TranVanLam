@@ -41,10 +41,6 @@ public class Employee extends Person{
 
     @Override
     public String toString() {
-        return "Employee{"+ super.toString() +
-                "level='" + level + '\'' +
-                ", location='" + location + '\'' +
-                ", wage=" + wage +
-                '}';
+        return "--Mã nhân viên: "+getIdPerSon()+" Tên nhân viên: "+getNamePerson()+" Ngày sinh : "+getDateOfBirth()+" Giới tính : "+getGender()+" CMND: "+getIdentityCard()+" Số điện thoại: "+getPhoneNumber()+ " Email: "+getEmail()+" Trình độ: "+getLevel()+" Chức vụ: "+getLocation()+" Lương: "+getWage();
     }
 }

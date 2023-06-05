@@ -67,7 +67,10 @@ public class EmployeeRepository implements IEmployeeRepository {
     @Override
     public void editEmployee(int index, Employee employee) {
         employeeList = displayEmployee();
-        List<String> stringList = new ArrayList<>();
-        WriteAndReadToFile.writeToFile(PATH_EMPLOYEE, stringList, false);
+        List<String> arrayList = new ArrayList<>();
+        for (Employee e: employeeList) {
+            arrayList.add(e.getIdPerSon() + "," + e.getNamePerson() + "," + e.getDateOfBirth() + "," + e.getGender() + "," + e.getIdentityCard() + "," + e.getPhoneNumber() + "," + e.getEmail() + "," + e.getLevel() + "," + e.getLocation() + "," + e.getWage());
+        }
+        WriteAndReadToFile.writeToFile(PATH_EMPLOYEE, arrayList, false);
     }
 }

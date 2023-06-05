@@ -9,14 +9,14 @@ public class FuramaController {
     public static void displayMainMenu(){
         boolean flag = true;
         do {
-            System.out.println("-----Management of the Furama resort-----\n" +
-                    "1.Employee Management\n" +
-                    "2.Customer Management\n" +
-                    "3.Facility Management \n" +
-                    "4.Booking Management\n" +
-                    "5.Promotion Management\n" +
-                    "6.Exit");
-            System.out.print("Please choose function: ");
+            System.out.println("-----Quản lý Furama resort-----\n" +
+                    "1.Quản lý nhân viên\n" +
+                    "2.Quản lý khách hàng\n" +
+                    "3.Quản lý cơ sở \n" +
+                    "4.Quản lý Booking\n" +
+                    "5.Quản lý khuyến mãi\n" +
+                    "6.Thoát");
+            System.out.print("Chọn chức năng: ");
             String choice = scanner.nextLine();
             switch (choice) {
                 case "1":
@@ -36,10 +36,10 @@ public class FuramaController {
                     break;
                 case "6":
                     flag = false;
-                    System.out.println("---GoodBye---");
+                    System.out.println("---Tạm biệt---");
                     break;
                 default:
-                    System.out.println("-------Enter wrong, re-enter-----");
+                    System.out.println("-------Nhập sai, nhập lại-----");
                     break;
             }
         }while (flag);

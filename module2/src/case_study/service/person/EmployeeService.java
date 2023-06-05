@@ -4,8 +4,6 @@ import case_study.common.Regex;
 import case_study.common.WageException;
 import case_study.model.person.Employee;
 import case_study.repository.person.EmployeeRepository;
-import extra_lessons.extra_lesson_1.model.small.Students;
-import ss12_java_collection_framework.bai_tap.model.Product;
 
 import java.util.List;
 import java.util.Scanner;
