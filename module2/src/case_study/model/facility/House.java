@@ -19,7 +19,7 @@ public class House extends Facility {
      * @creator: Lâm
      * @date : 28/05/2023
      */
-    public House(int idService, String nameService, float usableArea, float rentalCosts, int maximumPeople, String rentalType, String roomStandard, int numberOfFloors) {
+    public House(String idService, String nameService, float usableArea, long rentalCosts, int maximumPeople, String rentalType, String roomStandard, int numberOfFloors) {
         super(idService, nameService, usableArea, rentalCosts, maximumPeople, rentalType);
         this.roomStandard = roomStandard;
         this.numberOfFloors = numberOfFloors;
@@ -43,7 +43,7 @@ public class House extends Facility {
 
     @Override
     public String toString() {
-        return "House{" +
+        return "House{" +super.toString() +
                 "roomStandard='" + roomStandard + '\'' +
                 ", numberOfFloors=" + numberOfFloors +
                 '}';

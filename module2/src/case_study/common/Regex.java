@@ -8,6 +8,9 @@ public class Regex {
     private static final String EMAIL_REGEX = "^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$";
     private static  final String DATE_OF_BIRTH_REGEX = "^\\d{2}/\\d{2}/\\d{4}$";
     private static final String ID_CUSTOMER_REGEX = "^KH-\\d{4}$";
+    private static  final String ID_SERVICE_VILLA = "^SVVL-\\d{4}$";
+    private static  final String ID_SERVICE_HOUSE = "^SVHO-\\d{4}$";
+    private static  final String ID_SERVICE_ROOM = "^SVRO-\\d{4}$";
 
 
     public static boolean validateIdentityCard(String identityCard){
@@ -31,5 +34,12 @@ public class Regex {
     }
     public static boolean validateIdCustomer(String idPerson){
         return idPerson.matches(ID_CUSTOMER_REGEX);
+    }
+    public  static  boolean validateIdServiceVilla(String idService){
+        return  idService.matches(ID_SERVICE_VILLA);
+    }public  static  boolean validateIdServiceHouse(String idService){
+        return  idService.matches(ID_SERVICE_HOUSE);
+    }public  static  boolean validateIdServiceRoom(String idService){
+        return  idService.matches(ID_SERVICE_ROOM);
     }
 }

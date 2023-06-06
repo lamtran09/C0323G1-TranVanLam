@@ -23,6 +23,7 @@ public class CustomerService implements ICustomerService {
     public void addCustomer() {
         //String idPerSon, String namePerson, String dateOfBirth, String gender, String identityCard, String phoneNumber, String email, String typeCustomer, String address
         String idPerson;
+
         do {
             System.out.print("Nhập id của khách hàng( định dạng: KH-YYYY, với YYYY là các số từ 0-9): ");
             idPerson = scanner.nextLine();
@@ -75,7 +76,7 @@ public class CustomerService implements ICustomerService {
             email = scanner.nextLine();
         } while (!Regex.validateEmail(email));
         String typeCustomer = "";
-        boolean flagTwo ;
+        boolean flagTwo;
         //Diamond, Platinum, Gold, Silver, Member
         do {
             flagTwo = true;
@@ -112,7 +113,7 @@ public class CustomerService implements ICustomerService {
         String address;
         System.out.print("Nhập địa chỉ của khách hàng: ");
         address = scanner.nextLine();
-        Customer customer = new Customer(idPerson,namePerson,dateOfBirth,gender,identityCard,phoneNumber,email,typeCustomer,address);
+        Customer customer = new Customer(idPerson, namePerson, dateOfBirth, gender, identityCard, phoneNumber, email, typeCustomer, address);
         customerRepository.addCustomer(customer);
         System.out.println("Thêm thành công!!!");
     }
@@ -155,3 +156,4 @@ public class CustomerService implements ICustomerService {
         }
     }
 }
+

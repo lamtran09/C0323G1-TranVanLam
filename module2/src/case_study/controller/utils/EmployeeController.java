@@ -13,7 +13,7 @@ public class EmployeeController {
         do {
             System.out.println("----Quản Lý Nhân Viên-----\n" +
                     "1.Hiển thị danh sách nhân viên\n" +
-                    "2.thêm mới nhân viên\n" +
+                    "2.Thêm mới nhân viên\n" +
                     "3.Xóa nhân viên\n" +
                     "4.Chỉnh sửa danh sách nhân viên\n" +
                     "5.Tìm kiếm nhân viên\n" +
