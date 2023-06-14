@@ -9,12 +9,11 @@ public class Circle {
     //Overload
     public Circle() {
     }
-
+    // Overload , không thể kế thừa contructor
     public Circle(double radius, String color) {
         this.radius = radius;
         this.color = color;
     }
-
     public double getRadius() {
         return radius;
     }
