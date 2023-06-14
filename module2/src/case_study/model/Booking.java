@@ -1,6 +1,8 @@
 package case_study.model;
 
-public class Booking {
+import java.time.LocalDate;
+
+public class Booking implements Comparable<Booking> {
     private String idBooking;
     private String dateBooking;
     private String dateStartTenant;
@@ -12,13 +14,12 @@ public class Booking {
     }
 
     /**
-     *
-     * @param idBooking mã booking
-     * @param dateBooking  ngày booking
+     * @param idBooking       mã booking
+     * @param dateBooking     ngày booking
      * @param dateStartTenant ngày bắt đầu thuê
-     * @param dateEndTenant ngày kết thúc thuê
-     * @param idCustomer mã khách hàng
-     * @param idService  mã dịch vụ
+     * @param dateEndTenant   ngày kết thúc thuê
+     * @param idCustomer      mã khách hàng
+     * @param idService       mã dịch vụ
      */
     public Booking(String idBooking, String dateBooking, String dateStartTenant, String dateEndTenant, String idCustomer, String idService) {
         this.idBooking = idBooking;
@@ -87,5 +88,11 @@ public class Booking {
                 ", idCustomer='" + idCustomer + '\'' +
                 ", idService='" + idService + '\'' +
                 '}';
+    }
+    @Override
+    public int compareTo(Booking o) {
+        LocalDate localDate = LocalDate.parse(o.dateBooking);
+        LocalDate localDate1 = LocalDate.parse(this.dateBooking);
+        return localDate.isBefore(localDate1) ? 1 : -1;
     }
 }
