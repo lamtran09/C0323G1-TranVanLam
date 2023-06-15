@@ -1,4 +1,4 @@
-package ss4_class_object.common;
+package ss10_list.common;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -9,20 +9,21 @@ import java.util.List;
 
 public class ReadToFile {
     public static List<String> readToFile(String path){
-        List<String> arrayList = new ArrayList<>();
+        List<String> stringList = new ArrayList<>();
         try{
             FileReader fileReader = new FileReader(path);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String line ;
+            String line = "";
             while ((line = bufferedReader.readLine())!=null){
-                arrayList.add(line);
+                stringList.add(line);
             }
             bufferedReader.close();
+            fileReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("File không tồn tại");;
         } catch (IOException e) {
             System.out.println("Lỗi đọc File");;
         }
-        return arrayList;
+        return  stringList;
     }
 }
