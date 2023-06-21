@@ -1,6 +1,6 @@
 package ss12_java_collection.model;
 
-public class Fruits {
+public class Fruits implements Comparable<Fruits> {
     private String nameFruits;
     private String kindOfFruits;
     private String dateOfManufacture;
@@ -77,5 +77,10 @@ public class Fruits {
                 ", hạn sử dụng: '" + expiry + '\'' +
                 ", xuất xứ: '" + origin + '\'' +
                 ", giá: " + price;
+    }
+
+    @Override
+    public int compareTo(Fruits o) {
+        return (int) (this.price-o.price);
     }
 }

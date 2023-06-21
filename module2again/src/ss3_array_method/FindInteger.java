@@ -17,23 +17,22 @@ public class FindInteger {
                 System.out.println("Nhập sai định dạng");
             }
         }
-        if (checkNumber(number, arrayInteger)) {
-
-        } else {
+        if (checkNumber(number, arrayInteger) == -1) {
             System.out.println("Không tồn tại số trong mảng");
-            System.out.println("Mảng đó là "+ Arrays.toString(arrayInteger));
+            System.out.println("Mảng đó là " + Arrays.toString(arrayInteger));
+        } else {
+            System.out.println(checkNumber(number, arrayInteger));
         }
     }
 
-    public static boolean checkNumber(int number, int[] arr) {
+    public static int checkNumber(int number, int[] arr) {
         int index = 0;
         for (int i = 0; i < arr.length; i++) {
             if (number == arr[i]) {
                 index = i;
-                System.out.println(number + " ở vị trí thứ " + index + " trong mảng");
-                return true;
+                return index;
             }
         }
-        return false;
+        return -1;
     }
 }
