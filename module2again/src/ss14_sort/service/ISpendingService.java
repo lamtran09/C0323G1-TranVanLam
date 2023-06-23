@@ -7,4 +7,6 @@ public interface ISpendingService {
     void edit();
     void searchId();
     void searchName();
+    void sortName();
+    void sortPrice();
 }

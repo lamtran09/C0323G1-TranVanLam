@@ -39,7 +39,7 @@ public class SpendingRepository implements ISpendingRepository {
     @Override
     public void add(Spending spending) {
         List<String> stringList = new ArrayList<>();
-        stringList.add(spending.getIdSpending() + "," + spending.getNameSpending() + "," + spending.getDateSpending() + "," + spending.getPrince() + "," + spending.getDescribe());
+        stringList.add(spending.getIdSpending() + "," + spending.getNameSpending() + "," + spending.getDateSpending() + "," + spending.getPrice() + "," + spending.getDescribe());
         ReadWriteToFile.writeToFile(PATH_SPENDING, stringList, true);
     }
 
@@ -49,7 +49,20 @@ public class SpendingRepository implements ISpendingRepository {
         spendingList.remove(spending);
         List<String> stringList = new ArrayList<>();
         for (Spending spending1 : spendingList) {
-            stringList.add(spending1.getIdSpending() + "," + spending1.getNameSpending() + "," + spending1.getDateSpending() + "," + spending1.getPrince() + "," + spending1.getDescribe());
+            stringList.add(spending1.getIdSpending() + "," + spending1.getNameSpending() + "," + spending1.getDateSpending() + "," + spending1.getPrice() + "," + spending1.getDescribe());
+        }
+        ReadWriteToFile.writeToFile(PATH_SPENDING, stringList, false);
+    }
+
+    @Override
+    public void update(String id, Spending spending) {
+        spendingList = displaySpending();
+        List<String> stringList = new ArrayList<>();
+        for (Spending spending1 : spendingList) {
+            if (spending1.getIdSpending().equals(id)) {
+                spending1 = spending;
+            }
+            stringList.add(spending1.getIdSpending() + "," + spending1.getNameSpending() + "," + spending1.getDateSpending() + "," + spending1.getPrice() + "," + spending1.getDescribe());
         }
         ReadWriteToFile.writeToFile(PATH_SPENDING, stringList, false);
     }

@@ -21,7 +21,7 @@ public class FruitsRepository implements IFruitsRepository{
             fruitsSet.add(new Fruits(info[0],info[1],info[2],info[3],info[4],Long.parseLong(info[5])));
         }
         if(fruitsSet.isEmpty()){
-            System.out.println("Hệ thống chưa có thông tin");
+            System.out.println("Hệ thống chưa có dữ liệu");
         }
         return fruitsSet;
     }
@@ -29,7 +29,7 @@ public class FruitsRepository implements IFruitsRepository{
     @Override
     public void add(Fruits fruits) {
         List<String> stringList = new ArrayList<>();
-        stringList.add(fruits.getNameFruits()+","+fruits.getKindOfFruits()+","+fruits.getDateOfManufacture()+","+fruits.getNameFruits()+","+fruits.getExpiry()+","+fruits.getOrigin()+","+fruits.getPrice());
+        stringList.add(fruits.getNameFruits()+","+fruits.getKindOfFruits()+","+fruits.getDateOfManufacture()+","+fruits.getExpiry()+","+fruits.getOrigin()+","+fruits.getPrice());
         ReadWriteToFile.writeToFile(PATH_FRUITS,stringList,true);
     }
 
@@ -39,10 +39,11 @@ public class FruitsRepository implements IFruitsRepository{
     fruitsSet.remove(fruits);
     List<String> stringList = new ArrayList<>();
         for (Fruits fruits1: fruitsSet) {
-            stringList.add(fruits1.getNameFruits()+","+fruits1.getKindOfFruits()+","+fruits1.getDateOfManufacture()+","+fruits1.getNameFruits()+","+fruits1.getExpiry()+","+fruits1.getOrigin()+","+fruits1.getPrice());
+            stringList.add(fruits1.getNameFruits()+","+fruits1.getKindOfFruits()+","+fruits1.getDateOfManufacture()+","+fruits1.getExpiry()+","+fruits1.getOrigin()+","+fruits1.getPrice());
         }
         ReadWriteToFile.writeToFile(PATH_FRUITS,stringList,false);
     }
+
 
     @Override
     public Fruits getByNameFruits(String name) {

@@ -60,6 +60,26 @@ public class FruitsService implements IFruitsService {
 
     @Override
     public void edit() {
-
+        System.out.println("Nhập tên trái cây mà bạn muốn sửa");
+        String nameFruits = scanner.nextLine();
+        Fruits fruits = fruitsRepository.getByNameFruits(nameFruits);
+        if(fruits==null){
+            System.out.println("Không có tên này trong hệ thống");
+        }else {
+            fruitsRepository.remove(fruits);
+            System.out.println("Nhập loại trái cây: ");
+            String kindOfFruits = scanner.nextLine();
+            System.out.println("Nhập ngày sản xuất");
+            String dateOfManufacture = scanner.nextLine();
+            System.out.println("Nhập hạn sử dụng: ");
+            String expiry = scanner.nextLine();
+            System.out.println("Nhập nơi sản xuất: ");
+            String origin = scanner.nextLine();
+            System.out.println("Nhập giá: ");
+            long price = Long.parseLong(scanner.nextLine());
+            Fruits fruits1 = new Fruits(nameFruits,kindOfFruits,dateOfManufacture,expiry,origin,price);
+            fruitsRepository.add(fruits1);
+            System.out.println("Sửa thành công");
+        }
     }
 }

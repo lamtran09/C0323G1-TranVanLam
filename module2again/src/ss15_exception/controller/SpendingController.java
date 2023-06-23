@@ -32,7 +32,7 @@ public class SpendingController {
                     spendingService.delete();
                     break;
                 case "4":
-                    spendingService.edit();
+                    spendingService.update();
                     break;
                 case "5":
                     spendingService.searchId();

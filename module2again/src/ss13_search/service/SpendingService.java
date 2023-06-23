@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class SpendingService implements ISpendingService {
-    private static Scanner scanner = new Scanner(System.in);
-    private static ISpendingRepository spendingRepository = new SpendingRepository();
+    private static final Scanner scanner = new Scanner(System.in);
+    private static final ISpendingRepository spendingRepository = new SpendingRepository();
 
     @Override
     public void display() {
@@ -58,17 +58,68 @@ public class SpendingService implements ISpendingService {
 
     @Override
     public void edit() {
-
+        System.out.println("Nhập id cần sửa thông tin: ");
+        String idSpending = scanner.nextLine();
+        Spending spending = spendingRepository.getByID(idSpending);
+        if (spendingRepository.searchIdSpending(idSpending).size() == 0) {
+            System.out.println("Mã chi tiêu không có trong hệ thống");
+        } else {
+            spendingRepository.delete(spending);
+            while (true) {
+                System.out.println("Chọn mục cần chỉnh sửa ");
+                System.out.println("1.Tên chi tiêu");
+                System.out.println("2.Ngày chi tiêu");
+                System.out.println("3.Số tiền chi tiêu");
+                System.out.println("4.Mô tả");
+                System.out.println("0.Exit");
+                System.out.println("Chọn: ");
+                String choice = scanner.nextLine();
+                switch (choice) {
+                    case "1":
+                        System.out.println("Nhập tên chi tiêu: ");
+                        String nameSpending = scanner.nextLine();
+                        Spending spending1 = new Spending(idSpending, nameSpending, spending.getDateSpending(), spending.getPrince(), spending.getDescribe());
+                        spendingRepository.add(spending1);
+                        System.out.println("Sửa thành công!!!!!");
+                        break;
+                    case "2":
+                        System.out.println("Nhập ngày chi tiêu: ");
+                        String dateSpending = scanner.nextLine();
+                        Spending spending2 = new Spending(idSpending, spending.getNameSpending(), dateSpending, spending.getPrince(), spending.getDescribe());
+                        spendingRepository.add(spending2);
+                        System.out.println("Sửa thành công!!!!!");
+                        break;
+                    case "3":
+                        System.out.println("Nhập tiền chi tiêu : ");
+                        long price = Long.parseLong(scanner.nextLine());
+                        Spending spending3 = new Spending(idSpending, spending.getNameSpending(), spending.getDateSpending(), price, spending.getDescribe());
+                        spendingRepository.add(spending3);
+                        System.out.println("Sửa thành công!!!!!");
+                        break;
+                    case "4":
+                        System.out.println("Nhập Mô tả thêm: ");
+                        String describe = scanner.nextLine();
+                        Spending spending4 = new Spending(idSpending, spending.getNameSpending(), spending.getDateSpending(), spending.getPrince(), describe);
+                        spendingRepository.add(spending4);
+                        System.out.println("Sửa thành công!!!!!");
+                    case "0":
+                        return;
+                    default:
+                        System.out.println("Nhập sai nhập lại!");
+                }
+            }
+        }
     }
+
 
     @Override
     public void searchId() {
         System.out.println("Nhập id cần tìm kiếm: ");
         String idSpending = scanner.nextLine();
         List<Spending> spending = spendingRepository.searchIdSpending(idSpending);
-        if(spendingRepository.searchIdSpending(idSpending).size()==0){
+        if (spendingRepository.searchIdSpending(idSpending).size() == 0) {
             System.out.println("Mã chi tiêu không có trong hệ thống");
-        }else {
+        } else {
             for (Spending spending1 : spending) {
                 System.out.println(spending1);
             }
@@ -81,9 +132,9 @@ public class SpendingService implements ISpendingService {
         System.out.println("Nhập tên cần tìm kiếm: ");
         String nameSpending = scanner.nextLine();
         List<Spending> spending = spendingRepository.searchNameSpending(nameSpending);
-        if(spendingRepository.searchNameSpending(nameSpending).size()==0){
+        if (spendingRepository.searchNameSpending(nameSpending).size() == 0) {
             System.out.println("Tên chi tiêu không có trong hệ thống");
-        }else {
+        } else {
             for (Spending spending1 : spending) {
                 System.out.println(spending1);
             }

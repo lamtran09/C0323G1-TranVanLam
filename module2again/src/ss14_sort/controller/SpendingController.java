@@ -18,7 +18,9 @@ public class SpendingController {
                     "4.Sửa chi tiêu\n" +
                     "5.Tìm kiếm theo mã chi tiêu\n" +
                     "6.Tìm kiếm gần đúng theo tên chi tiêu\n" +
-                    "7.Exit");
+                    "7.Sắp xếp theo tên tăng dần\n" +
+                    "8.Sắp xếp theo số tiền chi giảm dần, nếu số tiền chi giống nhau thì sắp xếp theo tên tăng dần\n" +
+                    "0.Exit");
             System.out.println("Chọn chức năng: ");
             String choice = scanner.nextLine();
             switch (choice) {
@@ -41,6 +43,12 @@ public class SpendingController {
                     spendingService.searchName();
                     break;
                 case "7":
+                    spendingService.sortName();
+                    break;
+                case "8":
+                    spendingService.sortPrice();
+                    break;
+                case "0":
                     return;
                 default:
                     System.out.println("Nhập sai nhập lại");

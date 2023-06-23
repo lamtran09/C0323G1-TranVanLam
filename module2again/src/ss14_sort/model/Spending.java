@@ -2,11 +2,11 @@ package ss14_sort.model;
 
 import java.util.Objects;
 
-public class Spending {
+public class Spending implements Comparable<Spending> {
     private String idSpending;
     private String nameSpending;
     private String dateSpending;
-    private long prince;
+    private long price;
     private String describe;
 
     public Spending() {
@@ -16,7 +16,7 @@ public class Spending {
         this.idSpending = idSpending;
         this.nameSpending = nameSpending;
         this.dateSpending = dateSpending;
-        this.prince = prince;
+        this.price = prince;
         this.describe = describe;
     }
 
@@ -44,12 +44,12 @@ public class Spending {
         this.dateSpending = dateSpending;
     }
 
-    public long getPrince() {
-        return prince;
+    public long getPrice() {
+        return price;
     }
 
-    public void setPrince(long prince) {
-        this.prince = prince;
+    public void setPrice(long price) {
+        this.price = price;
     }
 
     public String getDescribe() {
@@ -79,7 +79,17 @@ public class Spending {
                 "Mã chi tiêu: '" + idSpending + '\'' +
                 ", Tên chi tiêu: '" + nameSpending + '\'' +
                 ", Ngày chi tiêu: '" + dateSpending + '\'' +
-                ", Số tiền chi: " + prince +
-                ", Mô tả thêm: '" + describe + '\'' ;
+                ", Số tiền chi: " + price +
+                ", Mô tả thêm: '" + describe + '\'';
+    }
+
+    @Override
+    public int compareTo(Spending o) {
+        if (this.price - o.price > 0) {
+            return 1;
+        } else if (this.price - o.price < 0) {
+            return -1;
+        } else
+            return 0;
     }
 }
