@@ -55,6 +55,19 @@ public class SpendingRepository implements ISpendingRepository {
     }
 
     @Override
+    public void update(String id, Spending spending) {
+        spendingList = displaySpending();
+        List<String> stringList = new ArrayList<>();
+        for (Spending spending1 : spendingList) {
+            if (spending1.getIdSpending().equals(id)) {
+                spending1 = spending;
+            }
+            stringList.add(spending1.getIdSpending() + "," + spending1.getNameSpending() + "," + spending1.getDateSpending() + "," + spending1.getPrince() + "," + spending1.getDescribe());
+        }
+        ReadWriteToFile.writeToFile(PATH_SPENDING, stringList, false);
+    }
+
+    @Override
     public List<Spending> searchNameSpending(String nameSpending) {
         spendingList = displaySpending();
         List<Spending> spendingList1 = new ArrayList<>();

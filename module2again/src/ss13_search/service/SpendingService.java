@@ -64,7 +64,6 @@ public class SpendingService implements ISpendingService {
         if (spendingRepository.searchIdSpending(idSpending).size() == 0) {
             System.out.println("Mã chi tiêu không có trong hệ thống");
         } else {
-            spendingRepository.delete(spending);
             while (true) {
                 System.out.println("Chọn mục cần chỉnh sửa ");
                 System.out.println("1.Tên chi tiêu");
@@ -78,31 +77,27 @@ public class SpendingService implements ISpendingService {
                     case "1":
                         System.out.println("Nhập tên chi tiêu: ");
                         String nameSpending = scanner.nextLine();
-                        Spending spending1 = new Spending(idSpending, nameSpending, spending.getDateSpending(), spending.getPrince(), spending.getDescribe());
-                        spendingRepository.add(spending1);
-                        System.out.println("Sửa thành công!!!!!");
+                        spending.setNameSpending(nameSpending);
                         break;
                     case "2":
                         System.out.println("Nhập ngày chi tiêu: ");
                         String dateSpending = scanner.nextLine();
-                        Spending spending2 = new Spending(idSpending, spending.getNameSpending(), dateSpending, spending.getPrince(), spending.getDescribe());
-                        spendingRepository.add(spending2);
+                        spending.setDateSpending(dateSpending);
                         System.out.println("Sửa thành công!!!!!");
                         break;
                     case "3":
                         System.out.println("Nhập tiền chi tiêu : ");
                         long price = Long.parseLong(scanner.nextLine());
-                        Spending spending3 = new Spending(idSpending, spending.getNameSpending(), spending.getDateSpending(), price, spending.getDescribe());
-                        spendingRepository.add(spending3);
+                        spending.setPrince(price);
                         System.out.println("Sửa thành công!!!!!");
                         break;
                     case "4":
                         System.out.println("Nhập Mô tả thêm: ");
                         String describe = scanner.nextLine();
-                        Spending spending4 = new Spending(idSpending, spending.getNameSpending(), spending.getDateSpending(), spending.getPrince(), describe);
-                        spendingRepository.add(spending4);
+                        spending.setDescribe(describe);
                         System.out.println("Sửa thành công!!!!!");
                     case "0":
+                        spendingRepository.update(idSpending, spending);
                         return;
                     default:
                         System.out.println("Nhập sai nhập lại!");

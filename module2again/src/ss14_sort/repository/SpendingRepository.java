@@ -64,7 +64,7 @@ public class SpendingRepository implements ISpendingRepository {
             }
             stringList.add(spending1.getIdSpending() + "," + spending1.getNameSpending() + "," + spending1.getDateSpending() + "," + spending1.getPrice() + "," + spending1.getDescribe());
         }
-        ss15_exception.common.ReadWriteToFile.writeToFile(PATH_SPENDING, stringList, false);
+        ReadWriteToFile.writeToFile(PATH_SPENDING, stringList, false);
     }
 
     @Override
