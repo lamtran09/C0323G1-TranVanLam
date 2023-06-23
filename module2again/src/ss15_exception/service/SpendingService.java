@@ -58,13 +58,17 @@ public class SpendingService implements ISpendingService {
     public void delete() {
         String idSending;
         List<Spending> spendingList = spendingRepository.displaySpending();
-        while (true) {
+        boolean flag = false;
+        while (!flag) {
             System.out.println("Nhập mã chi tiêu mà bạn muốn xóa: ");
             try {
+                boolean check  = false;
                 idSending = scanner.nextLine();
                 Spending spending = spendingRepository.getByID(idSending);
-                for (Spending spending1 : spendingList) {
-                    if (idSending.equals(spending1.getIdSpending())) {
+                for (int i = 0; i < spendingList.size(); i++) {
+                    if (idSending.equals(spendingList.get(i).getIdSpending())) {
+                        flag = true;
+                        check = true;
                         System.out.println("Bạn có chắc chắn muốn xóa mã chi tiêu " + spending.getNameSpending());
                         System.out.println("1.Ok\n" +
                                 "2.Suy nghĩ lại");
@@ -76,12 +80,14 @@ public class SpendingService implements ISpendingService {
                         } else if (choice.equals("2")) {
                             return;
                         }
-                    } else {
-                        throw new IdNotFoundException("Không có id cần xóa");
                     }
+                }
+                if(!check){
+                    throw new IdNotFoundException("ID không tồn tại");
                 }
             } catch (IdNotFoundException e) {
                 System.out.println(e.getMessage());
+                break;
             }
         }
     }
