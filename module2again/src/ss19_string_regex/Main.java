@@ -1,17 +1,13 @@
 package ss19_string_regex;
 
+import java.util.Scanner;
+
 public class Main {
-    String solution(String s) {
-        String arr = "";
-        for (int i = 0; i < s.length(); i++) {
-            if (Character.isUpperCase(s.charAt(i))) {
-                arr += " " + s.toLowerCase().charAt(i);
-            } else {
-                arr += s.charAt(i);
-            }
-        }
-        return arr.toString().trim();
-
-
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập email muốn kiểm tra định dạng: ");
+        String email = scanner.nextLine();
+        System.out.println(ValidateEmail.checkRegexEmailCustomer(email));
     }
+
 }
