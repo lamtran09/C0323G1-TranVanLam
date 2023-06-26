@@ -5,34 +5,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadWriteToFile {
-    public static List<String> readToFile(String path) {
-        List<String> stringArrayList = new ArrayList<>();
+    public static void writeToFile(String path, List<String> stringList,boolean append) {
         try {
-            FileReader fileReader = new FileReader(path);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String line = "";
-            while ((line = bufferedReader.readLine()) != null) {
-                stringArrayList.add(line);
-            }
-            bufferedReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("File không tồn tại");;
-        } catch (IOException e) {
-            System.out.println("Lỗi đọc File");;
+            FileOutputStream fileOutputStream = new FileOutputStream(path);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            objectOutputStream.writeObject(stringList);
+            objectOutputStream.flush();
+            objectOutputStream.close();
+            fileOutputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return stringArrayList;
     }
-    public static void writeToFile(String path,List<String> stringList,boolean append){
-        try{
-            FileWriter fileWriter = new FileWriter(path,append);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            for (String str:stringList) {
-                bufferedWriter.write(str);
-                bufferedWriter.newLine();
-            }
-            bufferedWriter.close();
+
+    public static List<String> readToFile(String path){
+        List<String> stringList = new ArrayList<>();
+        try {
+            FileInputStream fileInputStream = new FileInputStream(path);
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+            stringList = (List<String>) objectInputStream.readObject();
+            objectInputStream.close();
+            fileInputStream.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
-            System.out.println("Lỗi đọc File");;
+            System.out.println("Can't copy that file");
+            System.out.printf(e.getMessage());
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
+        return stringList;
     }
 }
