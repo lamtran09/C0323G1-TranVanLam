@@ -37,6 +37,11 @@ public abstract class Book {
     public void setPublishingYear(String publishingYear) {
         this.publishingYear = publishingYear;
     }
+    public String display() {
+        return " Tên sách: '" + nameBook + '\'' +
+                ", Nhà xuất bản: '" + publishingCompany + '\'' +
+                ", Năm xuất bản: '" + publishingYear + '\'';
+    }
 
     @Override
     public String toString() {
