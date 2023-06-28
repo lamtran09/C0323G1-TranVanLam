@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SpendingRepository implements ISpendingRepository {
-    private static final String PATH_SPENDING = "src/ss15_exception/ultils/spending.csv";
+    private static final String PATH_SPENDING = "src/ss15_exception/ultils/spending.dat";
     private static List<Spending> spendingList = new ArrayList<>();
 
     @Override

@@ -9,6 +9,5 @@ public interface ISpendingRepository {
     Spending getByID(String idSpending);
     void add(Spending spending);
     void delete(Spending spending);
-    List<Spending> searchNameSpending(String nameSpending);
-    List<Spending> searchIdSpending(String idSpending);
+
 }

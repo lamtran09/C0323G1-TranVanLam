@@ -19,6 +19,8 @@ public class ReadWriteToFile {
             System.out.println("File không tồn tại");;
         } catch (IOException e) {
             System.out.println("Lỗi đọc File");;
+        }catch (Exception e){
+            System.out.println("Lỗi chưa xac định");
         }
         return stringArrayList;
     }
@@ -33,6 +35,8 @@ public class ReadWriteToFile {
             bufferedWriter.close();
         } catch (IOException e) {
             System.out.println("Lỗi đọc File");;
+        }catch (Exception e){
+            System.out.println("Lỗi chưa xac định");
         }
     }
 }

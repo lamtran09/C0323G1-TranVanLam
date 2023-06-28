@@ -1,8 +1,9 @@
 package ss17_binary_file.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Spending {
+public class Spending implements Serializable {
     private String idSpending;
     private String nameSpending;
     private String dateSpending;

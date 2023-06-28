@@ -60,33 +60,4 @@ public class SpendingService implements ISpendingService {
     public void edit() {
 
     }
-
-    @Override
-    public void searchId() {
-        System.out.println("Nhập id cần tìm kiếm: ");
-        String idSpending = scanner.nextLine();
-        List<Spending> spending = spendingRepository.searchIdSpending(idSpending);
-        if(spendingRepository.searchIdSpending(idSpending).size()==0){
-            System.out.println("Mã chi tiêu không có trong hệ thống");
-        }else {
-            for (Spending spending1 : spending) {
-                System.out.println(spending1);
-            }
-        }
-    }
-
-
-    @Override
-    public void searchName() {
-        System.out.println("Nhập tên cần tìm kiếm: ");
-        String nameSpending = scanner.nextLine();
-        List<Spending> spending = spendingRepository.searchNameSpending(nameSpending);
-        if(spendingRepository.searchNameSpending(nameSpending).size()==0){
-            System.out.println("Tên chi tiêu không có trong hệ thống");
-        }else {
-            for (Spending spending1 : spending) {
-                System.out.println(spending1);
-            }
-        }
-    }
 }

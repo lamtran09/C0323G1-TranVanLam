@@ -1,39 +1,43 @@
 package ss17_binary_file.common;
 
+import ss17_binary_file.model.Spending;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ReadWriteToFile {
-    public static void writeToFile(String path, List<String> stringList,boolean append) {
+    public static void writeToFile(String path, List<Spending> spendings) {
+        File file = new File(path);
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream(path);
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-            objectOutputStream.writeObject(stringList);
-            objectOutputStream.flush();
+            objectOutputStream.writeObject(spendings);
             objectOutputStream.close();
             fileOutputStream.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
-    public static List<String> readToFile(String path){
-        List<String> stringList = new ArrayList<>();
+    public static List<Spending> readToFile(String path) {
+        List<Spending> spendings = new ArrayList<>();
         try {
             FileInputStream fileInputStream = new FileInputStream(path);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-            stringList = (List<String>) objectInputStream.readObject();
+            spendings = (List<Spending>) objectInputStream.readObject();
             objectInputStream.close();
             fileInputStream.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("File không tồn tại");
         } catch (IOException e) {
-            System.out.println("Can't copy that file");
-            System.out.printf(e.getMessage());
+            System.out.println("Lỗi đọc File");
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        } catch (Exception exception) {
+
         }
-        return stringList;
+        return spendings;
     }
 }

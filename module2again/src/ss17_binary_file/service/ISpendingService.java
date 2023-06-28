@@ -5,6 +5,4 @@ public interface ISpendingService {
     void add();
     void delete();
     void edit();
-    void searchId();
-    void searchName();
 }
