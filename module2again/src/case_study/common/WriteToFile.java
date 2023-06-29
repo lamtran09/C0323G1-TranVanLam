@@ -18,6 +18,8 @@ public class WriteToFile {
             fileWriter.close();
         } catch (IOException e) {
             System.out.println("Lỗi đọc File");
+        }catch(Exception e){
+            System.out.println("Lỗi");
         }
     }
 }
