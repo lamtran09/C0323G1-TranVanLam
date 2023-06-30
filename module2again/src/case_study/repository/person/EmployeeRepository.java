@@ -3,14 +3,12 @@ package case_study.repository.person;
 import case_study.model.person.Employee;
 import extra_exercises.extra_exercises_1.common.ReadToFile;
 import extra_exercises.extra_exercises_1.common.WriteToFile;
-
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class EmployeeRepository implements IPersonRepository<Employee>{
     private static final String PATH_DATA = "src/case_study/data/employee.csv";
-    private static final List<Employee>employees = new ArrayList<>();
+    private static List<Employee>employees = new ArrayList<>();
     @Override
     public List<Employee> display() {
         List<String> stringList = ReadToFile.readToFile(PATH_DATA);
@@ -35,17 +33,37 @@ public class EmployeeRepository implements IPersonRepository<Employee>{
 
     @Override
     public void remove(Employee person) {
-
+        employees = display();
+        employees.remove(person);
+        List<String> stringList = new ArrayList<>();
+        for (Employee employee:employees) {
+            stringList.add(employee.infoEmployeeToCSV());
+        }
+        WriteToFile.writeToFile(PATH_DATA,stringList,false);
     }
 
     @Override
     public Employee getById(String id) {
+        employees = display();
+        for (Employee employee:employees) {
+            if(employee.getIdPerSon().equals(id)){
+                return employee;
+            }
+        }
         return null;
     }
 
     @Override
     public void update(String id, Employee person) {
-
+        employees = display();
+        List<String> stringList = new ArrayList<>();
+        for (Employee employee:employees) {
+            if(employee.getIdPerSon().equals(id)){
+                employee = person;
+            }
+            stringList.add(employee.infoEmployeeToCSV());
+        }
+        WriteToFile.writeToFile(PATH_DATA,stringList,false);
     }
 
 

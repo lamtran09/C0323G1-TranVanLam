@@ -26,7 +26,7 @@ public class Customer extends Person{
         this.address = address;
     }
     public String infoCustomerToCSV() {
-        return this.getIdPerSon()+","+this.getNamePerson()+","+this.getDateOfBirth()+","+this.getGender()+this.getIdentityCard()+","+this.getPhoneNumber()+this.getEmail()+","+this.getTypeCustomer()+","+this.getAddress();
+        return this.getIdPerSon()+","+this.getNamePerson()+","+this.getDateOfBirth()+","+this.getGender()+","+this.getIdentityCard()+","+this.getPhoneNumber()+","+this.getEmail()+","+this.getTypeCustomer()+","+this.getAddress();
     }
     @Override
     public String toString() {
