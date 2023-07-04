@@ -3,6 +3,9 @@ package case_study.ultils;
 public class Validate {
     private static final String REGEX_ID_CUSTOMER = "^KH-\\d{4}$";
     private static final String REGEX_ID_EMPLOYEE = "^NV-\\d{4}$";
+    private static final String REGEX_ID_ROOM = "^SVRO-\\d{4}$";
+    private static final String REGEX_ID_VILLA = "^SVVL-\\d{4}$";
+    private static final String REGEX_ID_HOUSE = "^SVHO-\\d{4}$";
     private static final String REGEX_NAME_CUSTOMER = "^[A-Z][a-z]{0,6}(\\s[A-Z][a-z]{1,6}){1,8}$";
     private static final String REGEX_IDENTITY_CARD = "^\\d{9}|\\d{12}$";
     private static final String REGEX_PHONE_NUMBER = "^(0)\\d{9}|(\\+84)\\d{9}$";
@@ -12,6 +15,12 @@ public class Validate {
         return id.matches(REGEX_ID_CUSTOMER);
     }  public boolean validateIdEmployee(String id) {
         return id.matches(REGEX_ID_EMPLOYEE);
+    } public boolean validateIdRoom(String id) {
+        return id.matches(REGEX_ID_ROOM);
+    } public boolean validateIdHouse(String id) {
+        return id.matches(REGEX_ID_HOUSE);
+    } public boolean validateIdVilla(String id) {
+        return id.matches(REGEX_ID_VILLA);
     }
 
     public boolean validateNameCustomer(String name) {
