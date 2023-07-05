@@ -9,7 +9,7 @@ public class Villa extends Facility {
     }
     /**
      * @creator: Lâm
-     * @date : 28/05/2023
+     *
      * @param idService  Mã dịch vụ
      * @param nameService Tên dịch vụ
      * @param usableArea Diện tích sử dụng
